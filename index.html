@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chamroeun Saran | Portfolio & Creative Developer</title>
+  <meta name="description" content="Portfolio of Chamroeun Saran, a creative frontend developer specializing in modern web design and interactive experiences.">
+  
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav id="navbar">
+    <div class="container nav-content">
+      <a href="#" class="logo">CS<span style="color: var(--primary);">.</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a href="#projects" class="btn-primary" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">My Work</a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header id="home">
+    <img src="hero_bg_abstract_1775306559734.png" alt="Background" class="hero-img">
+    <div class="container hero-content">
+      <span class="badge">Available for Projects</span>
+      <h1>I'm <span style="background: linear-gradient(135deg, #0ea5e9, #6366f1); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Chamroeun Saran</span></h1>
+      <p class="typing-text">Frontend Developer & <span id="changing-text">UI Designer</span></p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="#projects" class="btn-primary">Explore Portfolio</a>
+        <a href="resume.pdf" download class="btn-primary" style="background: rgba(255, 255, 255, 0.05); color: white; border: 1px solid var(--glass-border); box-shadow: none;"><i class="fas fa-file-download" style="margin-right: 0.5rem;"></i> Download Resume</a>
+        <a href="#contact" class="btn-primary" style="background: rgba(14, 165, 233, 0.1); color: var(--primary); border: 1px solid rgba(14, 165, 233, 0.3); box-shadow: none;">Get in Touch</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" style="padding: 8rem 0;">
+    <div class="container grid" style="grid-template-columns: 1fr 1.5fr; align-items: center;">
+      <div style="position: relative;">
+        <img src="profile_avatar_1775306541363.png" alt="Chamroeun Saran" style="width: 100%; max-width: 400px; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
+        <div style="position: absolute; bottom: -20px; right: -20px; background: var(--card-bg); backdrop-filter: blur(10px); padding: 1.5rem; border-radius: 20px; border: 1px solid var(--glass-border);">
+            <h4 style="font-size: 2rem; color: var(--primary);">2+</h4>
+            <p style="font-size: 0.8rem; color: var(--text-muted);">Years of<br>Learning & Crafting</p>
+        </div>
+      </div>
+      <div>
+        <div class="badge">Who I Am</div>
+        <h2 class="section-title">Design with Purpose,<br>Build with Passion.</h2>
+        <p style="color: var(--text-muted); margin: 2rem 0; font-size: 1.1rem;">
+          I am a dedicated Frontend Developer and <strong>Computer Science Teacher</strong> based in Cambodia. I specialize in both creating modern web applications and empowering others through technical education. With extensive experience teaching <strong>Microsoft Office (Word, Excel, PowerPoint)</strong>, I bridge the gap between complex technology and everyday productivity.
+        </p>
+        <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
+           <div class="glass-card" style="padding: 1.5rem;">
+              <i class="fas fa-rocket" style="color: var(--primary); font-size: 1.5rem; margin-bottom: 1rem;"></i>
+              <h4 style="font-size: 1rem;">Fast Performance</h4>
+              <p style="font-size: 0.8rem; color: var(--text-muted);">Optimized code for blazing speed.</p>
+           </div>
+           <div class="glass-card" style="padding: 1.5rem;">
+              <i class="fas fa-layer-group" style="color: var(--primary); font-size: 1.5rem; margin-bottom: 1rem;"></i>
+              <h4 style="font-size: 1rem;">Responsive Design</h4>
+              <p style="font-size: 0.8rem; color: var(--text-muted);">Looks great on any device or screen.</p>
+           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects" style="padding: 8rem 0; background: rgba(0,0,0,0.2);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Work Portfolio</span>
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="section-line"></div>
+      </div>
+      
+      <div class="grid">
+        <!-- Video Downloader Project (FEATURED) -->
+        <div class="glass-card" style="grid-column: span 2; display: flex; flex-direction: row; gap: 2rem; align-items: center; overflow: hidden; position: relative;">
+          <div style="flex: 1; border-radius: 15px; overflow: hidden; height: 250px;">
+             <img src="video_downloader_mockup_1775306873596.png" style="width: 100%; height: 100%; object-fit: cover;" alt="Video Pro Downloader Mockup">
+          </div>
+          <div style="flex: 1;">
+            <span class="badge" style="background: rgba(244, 63, 94, 0.1); color: var(--accent); border-color: rgba(244, 63, 94, 0.3);">Featured Case Study</span>
+            <h3 style="font-size: 1.8rem; margin: 1rem 0;">Video Pro: Advanced Downloader</h3>
+            <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 2rem;">A robust media processing tool that extracts high-quality video (up to 4K) from multiple social platforms. Built with a focus on multithreading and custom scraper logic.</p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+              <span style="font-size: 0.8rem; color: #3776ab; background: rgba(55, 118, 171, 0.1); padding: 4px 10px; border-radius: 6px;">Python / yt-dlp</span>
+              <span style="font-size: 0.8rem; color: #0ea5e9; background: rgba(14, 165, 233, 0.1); padding: 4px 10px; border-radius: 6px;">CustomTkinter</span>
+              <span style="font-size: 0.8rem; color: #ff0050; background: rgba(255, 0, 80, 0.1); padding: 4px 10px; border-radius: 6px;">FFmpeg Engine</span>
+            </div>
+            <a href="#" class="btn-primary" style="padding: 0.7rem 1.5rem; font-size: 0.9rem;">Case Study</a>
+          </div>
+        </div>
+
+        <!-- Interactive Todo Project -->
+        <div class="glass-card" id="todo-app-card">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
+            <div>
+              <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Interactive Todo App</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">Modern task management built with Vanilla JS.</p>
+            </div>
+            <i class="fas fa-check-circle" style="font-size: 2rem; color: var(--primary);"></i>
+          </div>
+          
+          <!-- Todo App Internal -->
+          <div class="todo-container">
+            <div class="todo-header">
+              <input type="text" id="todo-input" class="todo-input" placeholder="What needs to be done?">
+              <button id="todo-add" class="todo-add"><i class="fas fa-plus"></i></button>
+            </div>
+            <ul id="todo-list" class="todo-list">
+              <!-- JS will populate -->
+            </ul>
+          </div>
+          
+          <div style="margin-top: 2rem; display: flex; gap: 0.5rem;">
+            <span style="font-size: 0.7rem; color: var(--primary); border: 1px solid var(--primary); padding: 2px 8px; border-radius: 4px;">LocalStorage</span>
+            <span style="font-size: 0.7rem; color: var(--primary); border: 1px solid var(--primary); padding: 2px 8px; border-radius: 4px;">Animations</span>
+          </div>
+        </div>
+
+        <!-- Static Landing Page Project -->
+        <div class="glass-card" style="position: relative; overflow: hidden; display: flex; flex-direction: column;">
+          <div style="height: 200px; background: linear-gradient(135deg, #1e293b, #0ea5e9); border-radius: 15px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center;">
+             <i class="fas fa-laptop-code" style="font-size: 4rem; opacity: 0.2; color: white;"></i>
+          </div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Luxury real estate Landing Page</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; flex-grow: 1;">A high-end landing page template with parallax effects and modern layout.</p>
+          <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
+            <a href="real-estate.html" class="todo-btn" style="color: var(--primary); font-size: 0.9rem;">View Demo <i class="fas fa-arrow-right"></i></a>
+            <a href="https://github.com/Chamroeun12" target="_blank" class="todo-btn" style="color: var(--text-muted); font-size: 0.9rem;">GitHub <i class="fab fa-github"></i></a>
+          </div>
+        </div>
+
+        <!-- Another Project -->
+        <div class="glass-card" style="position: relative; overflow: hidden; display: flex; flex-direction: column;">
+          <div style="height: 200px; background: linear-gradient(135deg, #1e293b, #6366f1); border-radius: 15px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center;">
+             <i class="fas fa-chart-line" style="font-size: 4rem; opacity: 0.2; color: white;"></i>
+          </div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">SaaS Dashboard UI</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; flex-grow: 1;">A complex analytics dashboard featuring data visualization and dark mode.</p>
+          <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
+            <a href="#" class="todo-btn" style="color: var(--primary); font-size: 0.9rem;">View Demo <i class="fas fa-arrow-right"></i></a>
+            <a href="https://github.com/Chamroeun12" target="_blank" class="todo-btn" style="color: var(--text-muted); font-size: 0.9rem;">GitHub <i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE & EDUCATION SECTION -->
+  <section id="experience" style="padding: 8rem 0; background: rgba(0,0,0,0.1);">
+    <div class="container">
+      <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 4rem;">
+        <div>
+           <span class="badge">Professional Journey</span>
+           <h2 class="section-title" style="text-align: left;">Experience & Education</h2>
+           <p style="color: var(--text-muted); margin-bottom: 2rem;">Combining development and teaching to empower others.</p>
+           
+           <div style="display: flex; flex-direction: column; gap: 2rem;">
+              <div class="glass-card" style="padding: 2rem; border-left: 4px solid var(--primary);">
+                 <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                    <div>
+                       <h4 style="font-size: 1.2rem;">Computer Science Teacher</h4>
+                       <span style="font-size: 0.8rem; color: var(--primary);">Various Schools / Private </span>
+                    </div>
+                    <span style="font-size: 0.825rem; background: rgba(255,255,255,0.05); padding: 4px 12px; border-radius: 99px;">2024 - Present</span>
+                 </div>
+                 <p style="font-size: 0.9rem; color: var(--text-muted);">
+                    Lead practical training sessions for over 100+ students, focusing on:
+                 </p>
+                 <ul style="margin-top: 1rem; color: var(--text-muted); font-size: 0.875rem; list-style: circle; padding-left: 1rem;">
+                    <li>Advanced Microsoft Word for professional documentation.</li>
+                    <li>Excel data analysis, pivoting, and financial formulas.</li>
+                    <li>PowerPoint design & visual storytelling.</li>
+                 </ul>
+              </div>
+
+              <div class="glass-card" style="padding: 2rem; border-left: 4px solid var(--secondary);">
+                 <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                    <div>
+                       <h4 style="font-size: 1.2rem;">IT Support Specialist</h4>
+                       <span style="font-size: 0.8rem; color: var(--secondary);">Freelance / Maintenance</span>
+                    </div>
+                 </div>
+                 <p style="font-size: 0.9rem; color: var(--text-muted);">
+                    Expertise in hardware/software maintenance & OS management:
+                 </p>
+                 <ul style="margin-top: 1rem; color: var(--text-muted); font-size: 0.875rem; list-style: circle; padding-left: 1rem;">
+                    <li>Full setup and optimization for Windows 10 & 11.</li>
+                    <li>Bulk software installation, driver management, and licensing.</li>
+                    <li>Advanced OS troubleshooting and bug fixing.</li>
+                 </ul>
+              </div>
+           </div>
+        </div>
+        
+        <div style="display: flex; flex-direction: column; gap: 2rem; justify-content: flex-start;">
+           <span class="badge">Professional Milestones</span>
+           <h2 class="section-title" style="text-align: left;">Academic & Career Timeline</h2>
+           
+           <div class="timeline" style="position: relative; padding-left: 2rem; border-left: 2px solid rgba(255,255,255,0.05); margin-top: 1rem;">
+              <div class="timeline-item" style="position: relative; margin-bottom: 2rem;">
+                 <div style="position: absolute; left: -2.4rem; top: 0.5rem; width: 12px; height: 12px; border-radius: 50%; background: var(--primary); box-shadow: 0 0 10px var(--primary);"></div>
+                 <h4 style="color: var(--primary); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase;">2024 - Foundation</h4>
+                 <h3 style="font-size: 1.1rem; margin: 0.5rem 0;">Started as Computer Science Teacher</h3>
+                 <p style="font-size: 0.85rem; color: var(--text-muted);">Empowered over 100 students through specialized Office & Media training.</p>
+              </div>
+              
+              <div class="timeline-item" style="position: relative; margin-bottom: 2rem;">
+                 <div style="position: absolute; left: -2.4rem; top: 0.5rem; width: 12px; height: 12px; border-radius: 50%; background: var(--secondary); box-shadow: 0 0 10px var(--secondary);"></div>
+                 <h4 style="color: var(--secondary); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase;">2025 - Innovation</h4>
+                 <h3 style="font-size: 1.1rem; margin: 0.5rem 0;">Media Processing & IT Specialist</h3>
+                 <p style="font-size: 0.85rem; color: var(--text-muted);">Built the 'Video Pro' engine and provided expert technical support for local businesses.</p>
+              </div>
+
+              <div class="timeline-item" style="position: relative; margin-bottom: 0;">
+                 <div style="position: absolute; left: -2.4rem; top: 0.5rem; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent);"></div>
+                 <h4 style="color: var(--accent); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase;">2026 - Present</h4>
+                 <h3 style="font-size: 1.1rem; margin: 0.5rem 0;">Creative Frontend Engineering</h3>
+                 <p style="font-size: 0.85rem; color: var(--text-muted);">Crafting premium user experiences and high-performance React applications.</p>
+              </div>
+           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills" style="padding: 8rem 0;">
+    <div class="container">
+      <div class="grid" style="grid-template-columns: 1fr 1fr; align-items: center; gap: 4rem;">
+        <div>
+          <span class="badge">My Stack</span>
+          <h2 class="section-title" style="text-align: left;">What I use to create digital magic.</h2>
+          <p style="color: var(--text-muted); margin-bottom: 2rem;">I keep up with the latest industry trends and focus on writing clean, scalable code.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+            <div class="glass-card" style="padding: 1rem 1.5rem; border-radius: 15px;"><i class="fab fa-html5" style="color: #e34c26; margin-right: 0.5rem;"></i> HTML5</div>
+            <div class="glass-card" style="padding: 1rem 1.5rem; border-radius: 15px;"><i class="fab fa-css3-alt" style="color: #264de4; margin-right: 0.5rem;"></i> CSS3</div>
+            <div class="glass-card" style="padding: 1rem 1.5rem; border-radius: 15px;"><i class="fab fa-js" style="color: #f7df1e; margin-right: 0.5rem;"></i> JavaScript</div>
+            <div class="glass-card" style="padding: 1rem 1.5rem; border-radius: 15px;"><i class="fab fa-react" style="color: #61dbfb; margin-right: 0.5rem;"></i> React</div>
+            <div class="glass-card" style="padding: 1rem 1.5rem; border-radius: 15px;"><i class="fab fa-python" style="color: #3776ab; margin-right: 0.5rem;"></i> Python</div>
+            <div class="glass-card" style="padding: 1rem 1.5rem; border-radius: 15px;"><i class="fas fa-video" style="color: #ff0050; margin-right: 0.5rem;"></i> Video Processing</div>
+            <div class="glass-card" style="padding: 1rem 1.5rem; border-radius: 15px;"><i class="fas fa-terminal" style="color: #0ea5e9; margin-right: 0.5rem;"></i> FFmpeg</div>
+            <div class="glass-card" style="padding: 1rem 1.5rem; border-radius: 15px;"><i class="fab fa-git-alt" style="color: #f1502f; margin-right: 0.5rem;"></i> Git</div>
+            <div class="glass-card" style="padding: 1rem 1.5rem; border-radius: 15px;"><i class="fas fa-file-word" style="color: #2b579a; margin-right: 0.5rem;"></i> Word</div>
+            <div class="glass-card" style="padding: 1rem 1.5rem; border-radius: 15px;"><i class="fas fa-file-excel" style="color: #217346; margin-right: 0.5rem;"></i> Excel</div>
+            <div class="glass-card" style="padding: 1rem 1.5rem; border-radius: 15px;"><i class="fas fa-file-powerpoint" style="color: #d24726; margin-right: 0.5rem;"></i> PowerPoint</div>
+            <div class="glass-card" style="padding: 1rem 1.5rem; border-radius: 15px;"><i class="fab fa-windows" style="color: #00a4ef; margin-right: 0.5rem;"></i> Window 10/11</div>
+            <div class="glass-card" style="padding: 1rem 1.5rem; border-radius: 15px;"><i class="fas fa-tools" style="color: #94a3b8; margin-right: 0.5rem;"></i> OS Troubleshooting</div>
+            <div class="glass-card" style="padding: 1rem 1.5rem; border-radius: 15px;"><i class="fas fa-microchip" style="color: #10b981; margin-right: 0.5rem;"></i> Hardware Setup</div>
+          </div>
+        </div>
+        <div style="background: rgba(14, 165, 233, 0.05); padding: 3rem; border-radius: 30px; border: 1px dashed var(--glass-border);">
+            <div style="margin-bottom: 1.5rem;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span>Frontend Development</span>
+                    <span>95%</span>
+                </div>
+                <div style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden;">
+                    <div style="width: 95%; height: 100%; background: var(--primary);"></div>
+                </div>
+            </div>
+            <div style="margin-bottom: 1.5rem;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span>UI/UX Design</span>
+                    <span>85%</span>
+                </div>
+                <div style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden;">
+                    <div style="width: 85%; height: 100%; background: var(--secondary);"></div>
+                </div>
+            </div>
+            <div style="margin-bottom: 1.5rem;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span>Responsive Design</span>
+                    <span>90%</span>
+                </div>
+                <div style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden;">
+                    <div style="width: 90%; height: 100%; background: var(--primary);"></div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS SECTION -->
+  <section id="certifications" style="padding: 8rem 0; background: rgba(14, 165, 233, 0.02);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Verified Authority</span>
+        <h2 class="section-title">Certifications & Awards</h2>
+        <div class="section-line"></div>
+      </div>
+      
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+        <!-- Microsoft Word -->
+        <div class="glass-card" style="text-align: center; padding: 2.5rem; border: 1px dashed rgba(43, 87, 154, 0.3);">
+           <div style="width: 70px; height: 70px; background: rgba(43, 87, 154, 0.1); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+              <i class="fas fa-file-word" style="font-size: 2rem; color: #2b579a;"></i>
+           </div>
+           <h4 style="margin-bottom: 0.5rem;">Expert: Microsoft Word</h4>
+           <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.5rem;">Advanced document design & automation training.</p>
+           <span style="font-size: 0.7rem; color: #2b579a; border: 1px solid rgba(43, 87, 154, 0.5); padding: 4px 12px; border-radius: 99px;">Pending Upload <i class="fas fa-clock"></i></span>
+        </div>
+
+        <!-- Microsoft Excel -->
+        <div class="glass-card" style="text-align: center; padding: 2.5rem; border: 1px dashed rgba(33, 115, 70, 0.3);">
+           <div style="width: 70px; height: 70px; background: rgba(33, 115, 70, 0.1); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+              <i class="fas fa-file-excel" style="font-size: 2rem; color: #217346;"></i>
+           </div>
+           <h4 style="margin-bottom: 0.5rem;">Master: Microsoft Excel</h4>
+           <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.5rem;">Complex data analysis & financial calculations.</p>
+           <span style="font-size: 0.7rem; color: #217346; border: 1px solid rgba(33, 115, 70, 0.5); padding: 4px 12px; border-radius: 99px;">Pending Upload <i class="fas fa-clock"></i></span>
+        </div>
+
+        <!-- IT Support -->
+        <div class="glass-card" style="text-align: center; padding: 2.5rem; border: 1px dashed rgba(16, 185, 129, 0.3);">
+           <div style="width: 70px; height: 70px; background: rgba(16, 185, 129, 0.1); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+              <i class="fas fa-microchip" style="font-size: 2rem; color: #10b981;"></i>
+           </div>
+           <h4 style="margin-bottom: 0.5rem;">IT Support Professional</h4>
+           <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.5rem;">PC maintenance & OS optimization certificate.</p>
+           <span style="font-size: 0.7rem; color: #10b981; border: 1px solid rgba(16, 185, 129, 0.5); padding: 4px 12px; border-radius: 99px;">Pending Upload <i class="fas fa-clock"></i></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" style="padding: 8rem 0;">
+    <div class="container" style="max-width: 800px; text-align: center;">
+      <div class="section-header">
+        <span class="badge">Stay Connected</span>
+        <h2 class="section-title">Let's Build Something Great Together</h2>
+        <div class="section-line"></div>
+      </div>
+      
+      <div class="glass-card" style="padding: 3rem;">
+        <!-- Form configured with Formspree Endpoint -->
+        <form action="https://formspree.io/f/xbdpprvo" method="POST" style="display: flex; flex-direction: column; gap: 1.5rem; text-align: left;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    <label>Full Name</label>
+                    <input type="text" name="name" class="todo-input" placeholder="Your Name" style="background: rgba(255,255,255,0.03);" required>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    <label>Email Address</label>
+                    <input type="email" name="_replyto" class="todo-input" placeholder="email@example.com" style="background: rgba(255,255,255,0.03);" required>
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                <label>Message</label>
+                <textarea name="message" class="todo-input" rows="5" placeholder="Tell me about your project..." style="background: rgba(255,255,255,0.03); resize: none;" required></textarea>
+            </div>
+            <input type="hidden" name="_subject" value="New Portfolio Message!">
+            <button type="submit" class="btn-primary" style="align-self: center;">Send Message</button>
+        </form>
+      </div>
+      
+      <div style="margin-top: 4rem; display: flex; flex-direction: column; align-items: center; gap: 2rem;">
+         <a href="resume.pdf" download class="btn-primary"><i class="fas fa-file-pdf" style="margin-right: 0.5rem;"></i> Download Full CV</a>
+         <div style="display: flex; justify-content: center; gap: 3rem;">
+            <a href="https://github.com/Chamroeun12" target="_blank" style="color: var(--text-muted); font-size: 1.5rem; transition: var(--transition);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'"><i class="fab fa-github"></i></a>
+            <a href="#" style="color: var(--text-muted); font-size: 1.5rem; transition: var(--transition);" onmouseover="this.style.color='#0077b5'" onmouseout="this.style.color='var(--text-muted)'"><i class="fab fa-linkedin"></i></a>
+            <a href="#" style="color: var(--text-muted); font-size: 1.5rem; transition: var(--transition);" onmouseover="this.style.color='#1da1f2'" onmouseout="this.style.color='var(--text-muted)'"><i class="fab fa-twitter"></i></a>
+            <a href="#" style="color: var(--text-muted); font-size: 1.5rem; transition: var(--transition);" onmouseover="this.style.color='#ea4335'" onmouseout="this.style.color='var(--text-muted)'"><i class="fas fa-envelope"></i></a>
+         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="padding: 4rem 0; background: #0b1120; border-top: 1px solid var(--glass-border);">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <p style="color: var(--text-muted); font-size: 0.9rem;">&copy; 2026 Chamroeun Saran. Designed with <i class="fas fa-heart" style="color: var(--accent);"></i> in Cambodia.</p>
+      <div class="logo" style="font-size: 1.2rem;">CS<span style="color: var(--primary);">.</span></div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>

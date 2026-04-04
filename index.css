@@ -1,0 +1,330 @@
+/* Design System */
+:root {
+  --primary: #0ea5e9;
+  --secondary: #6366f1;
+  --accent: #f43f5e;
+  --dark-bg: #0f172a;
+  --card-bg: rgba(30, 41, 59, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', 'Inter', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: var(--text-main);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, rgba(14, 165, 233, 0.05), transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--dark-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+  border-radius: 10px;
+}
+
+/* Layout Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+header {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.2;
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent);
+  mask-image: linear-gradient(to bottom, black 50%, transparent);
+  z-index: -1;
+}
+
+.hero-content {
+  text-align: center;
+  z-index: 10;
+}
+
+.badge {
+  background: rgba(14, 165, 233, 0.15);
+  color: var(--primary);
+  padding: 0.5rem 1rem;
+  border-radius: 99px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: 1px solid rgba(14, 165, 233, 0.3);
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  backdrop-filter: blur(4px);
+}
+
+h1 {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #fff, var(--primary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+}
+
+.typing-text {
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+/* Glassmorphism Components */
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 2.5rem;
+  transition: var(--transition);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.glass-card:hover {
+  transform: translateY(-8px);
+  background: rgba(30, 41, 59, 0.85);
+  border-color: var(--primary);
+  box-shadow: 0 20px 40px rgba(14, 165, 233, 0.15);
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.section-line {
+  width: 60px;
+  height: 4px;
+  background: var(--primary);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 1rem 2.5rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(14, 165, 233, 0.3);
+}
+
+.btn-primary:hover {
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 15px 30px rgba(14, 165, 233, 0.5);
+}
+
+/* Todo App Styles */
+.todo-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.todo-header {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.todo-input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  color: white;
+  outline: none;
+}
+
+.todo-input:focus {
+  border-color: var(--primary);
+}
+
+.todo-add {
+  background: var(--primary);
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.todo-list {
+  list-style: none;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  margin-bottom: 0.5rem;
+  border-radius: 10px;
+  animation: slideIn 0.3s ease;
+}
+
+.todo-item.completed span {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.todo-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.todo-btn:hover {
+  color: var(--primary);
+}
+
+.todo-btn.delete:hover {
+  color: var(--accent);
+}
+
+/* Animations */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive Grid */
+.grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+/* Navbar */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1.5rem 0;
+  z-index: 1000;
+  transition: var(--transition);
+}
+
+nav.scrolled {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--text-main);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  h1 { font-size: 2.5rem; }
+  
+  /* Featured Card Mobile Stack */
+  .grid > .glass-card[style*="grid-column: span 2"] {
+    grid-column: span 1 !important;
+    flex-direction: column !important;
+    height: auto !important;
+  }
+  
+  .grid > .glass-card[style*="grid-column: span 2"] > div {
+    width: 100% !important;
+    height: auto !important;
+  }
+}

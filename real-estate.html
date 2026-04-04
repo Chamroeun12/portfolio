@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Obsidian Haven | Luxury Real Estate Listing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --gold: #c3922e;
+      --gold-light: #e6b84a;
+      --dark-slate: #1a1a1a;
+      --charcoal: #333333;
+      --white: #ffffff;
+      --transition: all 0.5s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background-color: var(--dark-slate);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 1.5rem 4rem;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: var(--transition);
+      background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+    }
+
+    nav.scrolled {
+      background: rgba(26, 26, 26, 0.95);
+      padding: 1rem 4rem;
+      border-bottom: 1px solid rgba(195, 146, 46, 0.2);
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 3rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--white);
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    /* Hero Styling with Parallax */
+    .hero {
+      height: 100vh;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 120%; /* For parallax */
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('luxury_mansion_exterior_1775307359325.png');
+      background-size: cover;
+      background-position: center;
+      z-index: -1;
+      transform: translateY(0);
+      transition: transform 0.1s linear;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      padding: 0 2rem;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeIn 1.5s forwards 0.5s;
+    }
+
+    @keyframes fadeIn {
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 10vw, 6rem);
+      margin-bottom: 1rem;
+      line-height: 1.1;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 3rem;
+      color: var(--gold);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--white);
+      padding: 1.2rem 3rem;
+      text-decoration: none;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border: 1px solid var(--gold);
+      transition: var(--transition);
+      display: inline-block;
+    }
+
+    .btn-gold:hover {
+      background: transparent;
+      color: var(--gold);
+    }
+
+    /* Details Grid */
+    .details {
+      padding: 8rem 4rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      background: var(--dark-slate);
+      border-bottom: 1px solid rgba(195, 146, 46, 0.1);
+    }
+
+    .detail-item {
+      text-align: center;
+    }
+
+    .detail-item i {
+      font-size: 2rem;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .detail-item h4 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .detail-item p {
+      font-size: 0.8rem;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Description Section */
+    .description {
+      padding: 10rem 15%;
+      display: flex;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .desc-text {
+      flex: 1;
+    }
+
+    .desc-text h2 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+      color: var(--gold);
+    }
+
+    .desc-text p {
+      line-height: 1.8;
+      color: #ccc;
+      margin-bottom: 2rem;
+    }
+
+    .back-to-portfolio {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: rgba(195, 146, 46, 0.8);
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: 99px;
+      text-decoration: none;
+      z-index: 2000;
+      backdrop-filter: blur(10px);
+      transition: var(--transition);
+      font-weight: 600;
+    }
+
+    .back-to-portfolio:hover {
+      background: var(--gold);
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 1024px) {
+      .details { grid-template-columns: repeat(2, 1fr); }
+      .description { flex-direction: column; padding: 5rem 5%; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="back-to-portfolio"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+
+  <nav id="navbar">
+    <a href="#" class="logo">ELITE<span style="color: var(--white);">ESTATES</span></a>
+    <div class="nav-links">
+      <a href="#">The Listing</a>
+      <a href="#">Architecture</a>
+      <a href="#">Amentities</a>
+      <a href="#">Gallery</a>
+    </div>
+    <a href="#" class="btn-gold" style="padding: 0.6rem 1.5rem; font-size: 0.7rem;">Inquire</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-bg" id="hero-parallax"></div>
+    <div class="hero-content">
+      <p>Luxury defined in architecture</p>
+      <h1>The Obsidian Haven</h1>
+      <div style="margin-top: 3rem;">
+        <a href="#" class="btn-gold">Schedule Private Tour</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="details">
+    <div class="detail-item">
+      <i class="fas fa-expand-arrows-alt"></i>
+      <h4>12,500</h4>
+      <p>Square Feet</p>
+    </div>
+    <div class="detail-item">
+      <i class="fas fa-bed"></i>
+      <h4>07</h4>
+      <p>Bedrooms</p>
+    </div>
+    <div class="detail-item">
+      <i class="fas fa-bath"></i>
+      <h4>09</h4>
+      <p>Bathrooms</p>
+    </div>
+    <div class="detail-item">
+      <i class="fas fa-car"></i>
+      <h4>06</h4>
+      <p>Garage Slots</p>
+    </div>
+  </section>
+
+  <section class="description">
+    <div class="desc-text">
+      <h2>Architectural Mastery</h2>
+      <p>Nestled in the coastal cliffs of a pristine sanctuary, The Obsidian Haven represents the pinnacle of modern luxury living. Every angle was crafted to harmonize with the rhythmic sounds of the ocean, using rare volcanic stone and sustainable glass tech.</p>
+      <p>Experience seamless indoor-outdoor living with a 50-foot infinity pool that bleeds into the horizon, a private underground cinema, and a climate-controlled vault for your collection.</p>
+      <a href="#" class="btn-gold" style="background: transparent;">Learn More</a>
+    </div>
+    <div style="flex:1;">
+       <img src="luxury_mansion_exterior_1775307359325.png" alt="Mansion Detail" style="width:100%; border: 1px solid var(--gold); padding: 1rem; filter: grayscale(0.5); border-radius: 4px;">
+    </div>
+  </section>
+
+  <footer style="padding: 4rem; text-align: center; border-top: 1px solid #333;">
+     <p style="color: #666; font-size: 0.8rem; letter-spacing: 2px;">ELITE ESTATES &copy; 2026. LUXURY LISTING EXPERT.</p>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    const heroBg = document.getElementById('hero-parallax');
+
+    window.addEventListener('scroll', () => {
+      // Navbar Scroll
+      if (window.scrollY > 100) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+
+      // Parallax Effect
+      let scrollPos = window.scrollY;
+      heroBg.style.transform = `translateY(${scrollPos * 0.4}px)`;
+    });
+  </script>
+</body>
+</html>
