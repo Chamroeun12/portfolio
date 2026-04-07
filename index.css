@@ -74,10 +74,44 @@ header {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.2;
-  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent);
-  mask-image: linear-gradient(to bottom, black 50%, transparent);
+  opacity: 0;
   z-index: -1;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(14, 165, 233, 0.3), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 50%, rgba(99, 102, 241, 0.2), transparent),
+    radial-gradient(ellipse 50% 30% at 20% 80%, rgba(139, 92, 246, 0.15), transparent),
+    linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+  z-index: -2;
+}
+
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  z-index: -1;
+}
+
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.8) 0%, transparent 100%);
 }
 
 .hero-content {
@@ -131,6 +165,43 @@ h1 {
   background: rgba(30, 41, 59, 0.85);
   border-color: var(--primary);
   box-shadow: 0 20px 40px rgba(14, 165, 233, 0.15);
+}
+
+/* Avatar */
+.avatar {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8rem;
+  font-weight: 800;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.initials-avatar {
+  background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 50%, #8b5cf6 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.initials-avatar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  50%, 100% { left: 100%; }
 }
 
 /* Section Header */
