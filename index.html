@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Chamroeun Saran | Portfolio & Creative Developer</title>
   <meta name="description" content="Portfolio of Chamroeun Saran, a creative frontend developer specializing in modern web design and interactive experiences.">
   
@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <!-- Custom Styles -->
   <link rel="stylesheet" href="index.css">
@@ -22,60 +22,75 @@
   <!-- NAVIGATION -->
   <nav id="navbar">
     <div class="container nav-content">
-      <a href="#" class="logo">CS<span style="color: var(--primary);">.</span></a>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
+      <a href="#" class="logo">CS<span class="text-primary">.</span></a>
+      <div class="nav-links" id="nav-links">
+        <a href="#about" class="nav-item">About</a>
+        <a href="#projects" class="nav-item">Projects</a>
+        <a href="#experience" class="nav-item">Experience</a>
+        <a href="#skills" class="nav-item">Skills</a>
+        <a href="#certifications" class="nav-item">Certifications</a>
+        <a href="#contact" class="nav-item">Contact</a>
+        <a href="#projects" class="btn-primary mobile-cta-btn">My Work</a>
       </div>
-      <a href="#projects" class="btn-primary" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">My Work</a>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light or dark theme" title="Toggle theme">
+          <i class="fas fa-moon" id="theme-icon"></i>
+        </button>
+        <a href="#projects" class="btn-primary desktop-cta-btn">My Work</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
     </div>
   </nav>
+  <div class="nav-backdrop" id="nav-backdrop"></div>
 
   <!-- HERO SECTION -->
   <header id="home">
     <div class="hero-bg"></div>
     <div class="container hero-content">
       <span class="badge">Available for Projects</span>
-      <h1>I'm <span style="background: linear-gradient(135deg, #0ea5e9, #6366f1); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Chamroeun Saran</span></h1>
+      <h1>I'm <span class="gradient-text">Chamroeun Saran</span></h1>
       <p class="typing-text">Frontend Developer & <span id="changing-text">UI Designer</span></p>
-      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+      <div class="hero-buttons">
         <a href="#projects" class="btn-primary">Explore Portfolio</a>
-        <a href="resume.pdf" download class="btn-primary" style="background: rgba(255, 255, 255, 0.05); color: white; border: 1px solid var(--glass-border); box-shadow: none;"><i class="fas fa-file-download" style="margin-right: 0.5rem;"></i> Download Resume</a>
-        <a href="#contact" class="btn-primary" style="background: rgba(14, 165, 233, 0.1); color: var(--primary); border: 1px solid rgba(14, 165, 233, 0.3); box-shadow: none;">Get in Touch</a>
+        <a href="resume.pdf" download class="btn-primary btn-outline"><i class="fas fa-file-download"></i> Download Resume</a>
+        <a href="#contact" class="btn-primary btn-ghost">Get in Touch</a>
       </div>
     </div>
   </header>
 
   <!-- ABOUT SECTION -->
-  <section id="about" style="padding: 8rem 0;">
-    <div class="container grid" style="grid-template-columns: 1fr 1.5fr; align-items: center;">
-      <div style="position: relative;">
-        <div class="avatar initials-avatar">CS</div>
-        <div style="position: absolute; bottom: -20px; right: -20px; background: var(--card-bg); backdrop-filter: blur(10px); padding: 1.5rem; border-radius: 20px; border: 1px solid var(--glass-border);">
-            <h4 style="font-size: 2rem; color: var(--primary);">2+</h4>
-            <p style="font-size: 0.8rem; color: var(--text-muted);">Years of<br>Learning & Crafting</p>
+  <section id="about" class="section">
+    <div class="container about-grid">
+      <div class="about-avatar-wrap">
+        <div class="avatar-card">
+          <img src="profile_avatar.jpg" alt="Chamroeun Saran - Creative Frontend Developer" class="avatar-img" onerror="this.src='profile_avatar.png'; this.onerror=function(){this.style.display='none'; document.getElementById('initials-fallback').style.display='flex';};">
+          <div id="initials-fallback" class="avatar initials-avatar" style="display: none;">CS</div>
+        </div>
+        <div class="about-stat-badge">
+            <h4 class="counter" data-target="2">2+</h4>
+            <p>Years of<br>Learning & Crafting</p>
         </div>
       </div>
-      <div>
-        <div class="badge">Who I Am</div>
-        <h2 class="section-title">Design with Purpose,<br>Build with Passion.</h2>
-        <p style="color: var(--text-muted); margin: 2rem 0; font-size: 1.1rem;">
+      <div class="about-info">
+        <span class="badge">Who I Am</span>
+        <h2 class="section-title section-title-left">Design with Purpose,<br>Build with Passion.</h2>
+        <p class="about-desc">
           I am a dedicated Frontend Developer and <strong>Computer Science Teacher</strong> based in Cambodia. I specialize in both creating modern web applications and empowering others through technical education. With extensive experience teaching <strong>Microsoft Office (Word, Excel, PowerPoint)</strong>, I bridge the gap between complex technology and everyday productivity.
         </p>
-        <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
-           <div class="glass-card" style="padding: 1.5rem;">
-              <i class="fas fa-rocket" style="color: var(--primary); font-size: 1.5rem; margin-bottom: 1rem;"></i>
-              <h4 style="font-size: 1rem;">Fast Performance</h4>
-              <p style="font-size: 0.8rem; color: var(--text-muted);">Optimized code for blazing speed.</p>
+        <div class="about-features-grid">
+           <div class="glass-card feature-card">
+              <i class="fas fa-rocket"></i>
+              <h4>Fast Performance</h4>
+              <p>Optimized code for blazing speed.</p>
            </div>
-           <div class="glass-card" style="padding: 1.5rem;">
-              <i class="fas fa-layer-group" style="color: var(--primary); font-size: 1.5rem; margin-bottom: 1rem;"></i>
-              <h4 style="font-size: 1rem;">Responsive Design</h4>
-              <p style="font-size: 0.8rem; color: var(--text-muted);">Looks great on any device or screen.</p>
+           <div class="glass-card feature-card">
+              <i class="fas fa-layer-group"></i>
+              <h4>Responsive Design</h4>
+              <p>Looks great on any device or screen.</p>
            </div>
         </div>
       </div>
@@ -83,83 +98,111 @@
   </section>
 
   <!-- PROJECTS SECTION -->
-  <section id="projects" style="padding: 8rem 0; background: rgba(0,0,0,0.2);">
+  <section id="projects" class="section section-dark">
     <div class="container">
       <div class="section-header">
         <span class="badge">Work Portfolio</span>
         <h2 class="section-title">Featured Projects</h2>
         <div class="section-line"></div>
       </div>
+
+      <!-- Project Category Filters -->
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">All Projects <span class="filter-count">4</span></button>
+        <button class="filter-btn" data-filter="web">Web Apps <span class="filter-count">2</span></button>
+        <button class="filter-btn" data-filter="ui">UI / UX <span class="filter-count">1</span></button>
+        <button class="filter-btn" data-filter="python">Python & Media <span class="filter-count">1</span></button>
+      </div>
       
-      <div class="grid">
+      <div class="grid" id="projects-grid">
         <!-- Video Downloader Project (FEATURED) -->
-        <div class="glass-card" style="grid-column: span 2; display: flex; flex-direction: row; gap: 2rem; align-items: center; overflow: hidden; position: relative;">
-          <div style="flex: 1; border-radius: 15px; overflow: hidden; height: 250px;">
-             <img src="video_downloader_mockup_1775306873596.png" style="width: 100%; height: 100%; object-fit: cover;" alt="Video Pro Downloader Mockup">
+        <div class="glass-card featured-project" data-category="python">
+          <div class="featured-project-img">
+             <img src="video_downloader_mockup_1775306873596.png" alt="Video Pro Downloader Mockup">
           </div>
-          <div style="flex: 1;">
-            <span class="badge" style="background: rgba(244, 63, 94, 0.1); color: var(--accent); border-color: rgba(244, 63, 94, 0.3);">Featured Case Study</span>
-            <h3 style="font-size: 1.8rem; margin: 1rem 0;">Video Pro: Advanced Downloader</h3>
-            <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 2rem;">A robust media processing tool that extracts high-quality video (up to 4K) from multiple social platforms. Built with a focus on multithreading and custom scraper logic.</p>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
-              <span style="font-size: 0.8rem; color: #3776ab; background: rgba(55, 118, 171, 0.1); padding: 4px 10px; border-radius: 6px;">Python / yt-dlp</span>
-              <span style="font-size: 0.8rem; color: #0ea5e9; background: rgba(14, 165, 233, 0.1); padding: 4px 10px; border-radius: 6px;">CustomTkinter</span>
-              <span style="font-size: 0.8rem; color: #ff0050; background: rgba(255, 0, 80, 0.1); padding: 4px 10px; border-radius: 6px;">FFmpeg Engine</span>
+          <div class="featured-project-content">
+            <span class="badge badge-case-study">Featured Case Study</span>
+            <h3>Video Pro: Advanced Downloader</h3>
+            <p class="project-desc">A robust media processing tool that extracts high-quality video (up to 4K) from multiple social platforms. Built with a focus on multithreading and custom scraper logic.</p>
+            <div class="project-tags">
+              <span class="tag tag-python">Python / yt-dlp</span>
+              <span class="tag tag-ui">CustomTkinter</span>
+              <span class="tag tag-ffmpeg">FFmpeg Engine</span>
             </div>
-            <a href="#" class="btn-primary" style="padding: 0.7rem 1.5rem; font-size: 0.9rem;">Case Study</a>
+            <button class="btn-primary btn-sm open-modal-btn" data-modal="video-pro-modal">
+              Case Study <i class="fas fa-arrow-up-right-from-square" style="font-size: 0.75rem; margin-left: 0.35rem;"></i>
+            </button>
           </div>
         </div>
 
         <!-- Interactive Todo Project -->
-        <div class="glass-card" id="todo-app-card">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
+        <div class="glass-card" id="todo-app-card" data-category="web">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.25rem; gap: 1rem;">
             <div>
-              <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Interactive Todo App</h3>
+              <h3 style="font-size: 1.4rem; margin-bottom: 0.35rem;">Interactive Todo App</h3>
               <p style="color: var(--text-muted); font-size: 0.9rem;">Modern task management built with Vanilla JS.</p>
             </div>
-            <i class="fas fa-check-circle" style="font-size: 2rem; color: var(--primary);"></i>
+            <i class="fas fa-check-circle" style="font-size: 1.8rem; color: var(--primary); flex-shrink: 0;"></i>
           </div>
           
           <!-- Todo App Internal -->
           <div class="todo-container">
             <div class="todo-header">
               <input type="text" id="todo-input" class="todo-input" placeholder="What needs to be done?">
-              <button id="todo-add" class="todo-add"><i class="fas fa-plus"></i></button>
+              <button id="todo-add" class="todo-add" aria-label="Add task"><i class="fas fa-plus"></i></button>
             </div>
+            
+            <!-- Todo Filter Pills & Count -->
+            <div class="todo-filter-bar">
+              <div class="todo-filter-pills">
+                <button class="todo-filter-btn active" data-todo-filter="all">All</button>
+                <button class="todo-filter-btn" data-todo-filter="active">Active</button>
+                <button class="todo-filter-btn" data-todo-filter="completed">Done</button>
+              </div>
+              <span id="todo-count" class="todo-count">0 left</span>
+            </div>
+
             <ul id="todo-list" class="todo-list">
               <!-- JS will populate -->
             </ul>
+
+            <div class="todo-footer">
+              <button id="todo-clear-completed" class="todo-clear-btn" aria-label="Clear completed tasks">
+                <i class="fas fa-trash-can"></i> Clear Done
+              </button>
+            </div>
           </div>
           
-          <div style="margin-top: 2rem; display: flex; gap: 0.5rem;">
-            <span style="font-size: 0.7rem; color: var(--primary); border: 1px solid var(--primary); padding: 2px 8px; border-radius: 4px;">LocalStorage</span>
-            <span style="font-size: 0.7rem; color: var(--primary); border: 1px solid var(--primary); padding: 2px 8px; border-radius: 4px;">Animations</span>
+          <div style="margin-top: 1.5rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <span style="font-size: 0.75rem; color: var(--primary); border: 1px solid var(--primary); padding: 3px 8px; border-radius: 4px;">LocalStorage</span>
+            <span style="font-size: 0.75rem; color: var(--primary); border: 1px solid var(--primary); padding: 3px 8px; border-radius: 4px;">Animations</span>
+            <span style="font-size: 0.75rem; color: var(--secondary); border: 1px solid var(--secondary); padding: 3px 8px; border-radius: 4px;">Interactive Demo</span>
           </div>
         </div>
 
         <!-- Static Landing Page Project -->
-        <div class="glass-card" style="position: relative; overflow: hidden; display: flex; flex-direction: column;">
-          <div style="height: 200px; background: linear-gradient(135deg, #1e293b, #0ea5e9); border-radius: 15px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center;">
-             <i class="fas fa-laptop-code" style="font-size: 4rem; opacity: 0.2; color: white;"></i>
+        <div class="glass-card project-card" data-category="web">
+          <div class="project-card-banner" style="background: linear-gradient(135deg, #1e293b, #0ea5e9);">
+             <i class="fas fa-laptop-code"></i>
           </div>
-          <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Luxury real estate Landing Page</h3>
-          <p style="color: var(--text-muted); font-size: 0.9rem; flex-grow: 1;">A high-end landing page template with parallax effects and modern layout.</p>
-          <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
-            <a href="real-estate.html" class="todo-btn" style="color: var(--primary); font-size: 0.9rem;">View Demo <i class="fas fa-arrow-right"></i></a>
-            <a href="https://github.com/Chamroeun12" target="_blank" class="todo-btn" style="color: var(--text-muted); font-size: 0.9rem;">GitHub <i class="fab fa-github"></i></a>
+          <h3>Luxury Real Estate Landing</h3>
+          <p class="project-desc" style="flex-grow: 1;">A high-end landing page template with parallax effects and modern architectural layout.</p>
+          <div class="project-card-actions">
+            <a href="real-estate.html" class="todo-btn" style="color: var(--primary);">View Demo <i class="fas fa-arrow-right" style="margin-left: 0.35rem;"></i></a>
+            <a href="https://github.com/Chamroeun12" target="_blank" class="todo-btn">GitHub <i class="fab fa-github" style="margin-left: 0.35rem;"></i></a>
           </div>
         </div>
 
-        <!-- Another Project -->
-        <div class="glass-card" style="position: relative; overflow: hidden; display: flex; flex-direction: column;">
-          <div style="height: 200px; background: linear-gradient(135deg, #1e293b, #6366f1); border-radius: 15px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center;">
-             <i class="fas fa-chart-line" style="font-size: 4rem; opacity: 0.2; color: white;"></i>
+        <!-- SaaS Dashboard UI Project -->
+        <div class="glass-card project-card" data-category="ui">
+          <div class="project-card-banner" style="background: linear-gradient(135deg, #1e293b, #6366f1);">
+             <i class="fas fa-chart-line"></i>
           </div>
-          <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">SaaS Dashboard UI</h3>
-          <p style="color: var(--text-muted); font-size: 0.9rem; flex-grow: 1;">A complex analytics dashboard featuring data visualization and dark mode.</p>
-          <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
-            <a href="#" class="todo-btn" style="color: var(--primary); font-size: 0.9rem;">View Demo <i class="fas fa-arrow-right"></i></a>
-            <a href="https://github.com/Chamroeun12" target="_blank" class="todo-btn" style="color: var(--text-muted); font-size: 0.9rem;">GitHub <i class="fab fa-github"></i></a>
+          <h3>SaaS Dashboard UI</h3>
+          <p class="project-desc" style="flex-grow: 1;">A complex analytics dashboard featuring data visualization and sleek dark mode aesthetics.</p>
+          <div class="project-card-actions">
+            <button class="todo-btn open-modal-btn" data-modal="saas-modal" style="color: var(--primary);">View Demo <i class="fas fa-arrow-right" style="margin-left: 0.35rem;"></i></button>
+            <a href="https://github.com/Chamroeun12" target="_blank" class="todo-btn">GitHub <i class="fab fa-github" style="margin-left: 0.35rem;"></i></a>
           </div>
         </div>
       </div>
@@ -167,44 +210,45 @@
   </section>
 
   <!-- EXPERIENCE & EDUCATION SECTION -->
-  <section id="experience" style="padding: 8rem 0; background: rgba(0,0,0,0.1);">
+  <section id="experience" class="section section-tinted">
     <div class="container">
-      <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 4rem;">
+      <div class="two-col-grid">
         <div>
            <span class="badge">Professional Journey</span>
-           <h2 class="section-title" style="text-align: left;">Experience & Education</h2>
-           <p style="color: var(--text-muted); margin-bottom: 2rem;">Combining development and teaching to empower others.</p>
+           <h2 class="section-title section-title-left">Experience & Education</h2>
+           <p class="section-subtitle">Combining development and teaching to empower others.</p>
            
-           <div style="display: flex; flex-direction: column; gap: 2rem;">
-              <div class="glass-card" style="padding: 2rem; border-left: 4px solid var(--primary);">
-                 <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+           <div class="experience-list">
+              <div class="glass-card exp-card exp-card-primary">
+                 <div class="exp-header">
                     <div>
-                       <h4 style="font-size: 1.2rem;">Computer Science Teacher</h4>
-                       <span style="font-size: 0.8rem; color: var(--primary);">Various Schools / Private </span>
+                       <h4>Computer Science Teacher</h4>
+                       <span class="exp-role">Various Schools / Private </span>
                     </div>
-                    <span style="font-size: 0.825rem; background: rgba(255,255,255,0.05); padding: 4px 12px; border-radius: 99px;">2024 - Present</span>
+                    <span class="exp-date">2024 - Present</span>
                  </div>
-                 <p style="font-size: 0.9rem; color: var(--text-muted);">
+                 <p class="exp-desc">
                     Lead practical training sessions for over 100+ students, focusing on:
                  </p>
-                 <ul style="margin-top: 1rem; color: var(--text-muted); font-size: 0.875rem; list-style: circle; padding-left: 1rem;">
+                 <ul class="exp-bullets">
                     <li>Advanced Microsoft Word for professional documentation.</li>
                     <li>Excel data analysis, pivoting, and financial formulas.</li>
                     <li>PowerPoint design & visual storytelling.</li>
                  </ul>
               </div>
 
-              <div class="glass-card" style="padding: 2rem; border-left: 4px solid var(--secondary);">
-                 <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+              <div class="glass-card exp-card exp-card-secondary">
+                 <div class="exp-header">
                     <div>
-                       <h4 style="font-size: 1.2rem;">IT Support Specialist</h4>
-                       <span style="font-size: 0.8rem; color: var(--secondary);">Freelance / Maintenance</span>
+                       <h4>IT Support Specialist</h4>
+                       <span class="exp-role role-secondary">Freelance / Maintenance</span>
                     </div>
+                    <span class="exp-date">2023 - Present</span>
                  </div>
-                 <p style="font-size: 0.9rem; color: var(--text-muted);">
+                 <p class="exp-desc">
                     Expertise in hardware/software maintenance & OS management:
                  </p>
-                 <ul style="margin-top: 1rem; color: var(--text-muted); font-size: 0.875rem; list-style: circle; padding-left: 1rem;">
+                 <ul class="exp-bullets">
                     <li>Full setup and optimization for Windows 10 & 11.</li>
                     <li>Bulk software installation, driver management, and licensing.</li>
                     <li>Advanced OS troubleshooting and bug fixing.</li>
@@ -213,30 +257,44 @@
            </div>
         </div>
         
-        <div style="display: flex; flex-direction: column; gap: 2rem; justify-content: flex-start;">
+        <div>
            <span class="badge">Professional Milestones</span>
-           <h2 class="section-title" style="text-align: left;">Academic & Career Timeline</h2>
+           <h2 class="section-title section-title-left">Academic & Career Timeline</h2>
            
-           <div class="timeline" style="position: relative; padding-left: 2rem; border-left: 2px solid rgba(255,255,255,0.05); margin-top: 1rem;">
-              <div class="timeline-item" style="position: relative; margin-bottom: 2rem;">
-                 <div style="position: absolute; left: -2.4rem; top: 0.5rem; width: 12px; height: 12px; border-radius: 50%; background: var(--primary); box-shadow: 0 0 10px var(--primary);"></div>
-                 <h4 style="color: var(--primary); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase;">2024 - Foundation</h4>
-                 <h3 style="font-size: 1.1rem; margin: 0.5rem 0;">Started as Computer Science Teacher</h3>
-                 <p style="font-size: 0.85rem; color: var(--text-muted);">Empowered over 100 students through specialized Office & Media training.</p>
+           <div class="timeline">
+              <div class="timeline-item">
+                 <div class="timeline-dot dot-secondary"></div>
+                 <h4 class="timeline-year text-secondary">2023 - Networking</h4>
+                 <h3>Cisco CCNAv7 Certified</h3>
+                 <p>Mastered enterprise switching, routing protocols, VLANs, and network security at USEA.</p>
               </div>
               
-              <div class="timeline-item" style="position: relative; margin-bottom: 2rem;">
-                 <div style="position: absolute; left: -2.4rem; top: 0.5rem; width: 12px; height: 12px; border-radius: 50%; background: var(--secondary); box-shadow: 0 0 10px var(--secondary);"></div>
-                 <h4 style="color: var(--secondary); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase;">2025 - Innovation</h4>
-                 <h3 style="font-size: 1.1rem; margin: 0.5rem 0;">Media Processing & IT Specialist</h3>
-                 <p style="font-size: 0.85rem; color: var(--text-muted);">Built the 'Video Pro' engine and provided expert technical support for local businesses.</p>
+              <div class="timeline-item">
+                 <div class="timeline-dot dot-primary"></div>
+                 <h4 class="timeline-year text-primary">2024 - Foundation</h4>
+                 <h3>Started as Computer Science Teacher</h3>
+                 <p>Empowered over 100 students through specialized Office & Media training.</p>
+              </div>
+              
+              <div class="timeline-item">
+                 <div class="timeline-dot dot-secondary"></div>
+                 <h4 class="timeline-year text-secondary">2025 - Innovation</h4>
+                 <h3>Media Processing & IT Specialist</h3>
+                 <p>Built the 'Video Pro' engine and provided expert technical support for local businesses.</p>
               </div>
 
-              <div class="timeline-item" style="position: relative; margin-bottom: 0;">
-                 <div style="position: absolute; left: -2.4rem; top: 0.5rem; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent);"></div>
-                 <h4 style="color: var(--accent); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase;">2026 - Present</h4>
-                 <h3 style="font-size: 1.1rem; margin: 0.5rem 0;">Creative Frontend Engineering</h3>
-                 <p style="font-size: 0.85rem; color: var(--text-muted);">Crafting premium user experiences and high-performance React applications.</p>
+              <div class="timeline-item">
+                 <div class="timeline-dot dot-accent"></div>
+                 <h4 class="timeline-year text-accent">2026 - Milestone</h4>
+                 <h3>Bachelor of Science in IT</h3>
+                 <p>Graduated from University of South-East Asia with formal major in Information Technology.</p>
+              </div>
+
+              <div class="timeline-item">
+                 <div class="timeline-dot dot-primary"></div>
+                 <h4 class="timeline-year text-primary">Present</h4>
+                 <h3>Creative Frontend Engineering</h3>
+                 <p>Crafting premium user experiences and high-performance web applications.</p>
               </div>
            </div>
         </div>
@@ -245,56 +303,57 @@
   </section>
 
   <!-- SKILLS SECTION -->
-  <section id="skills" style="padding: 8rem 0;">
+  <section id="skills" class="section">
     <div class="container">
-      <div class="grid" style="grid-template-columns: 1fr 1fr; align-items: center; gap: 4rem;">
+      <div class="two-col-grid align-center">
         <div>
           <span class="badge">My Stack</span>
-          <h2 class="section-title" style="text-align: left;">What I use to create digital magic.</h2>
-          <p style="color: var(--text-muted); margin-bottom: 2rem;">I keep up with the latest industry trends and focus on writing clean, scalable code.</p>
-          <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
-            <div class="glass-card" style="padding: 1rem 1.5rem; border-radius: 15px;"><i class="fab fa-html5" style="color: #e34c26; margin-right: 0.5rem;"></i> HTML5</div>
-            <div class="glass-card" style="padding: 1rem 1.5rem; border-radius: 15px;"><i class="fab fa-css3-alt" style="color: #264de4; margin-right: 0.5rem;"></i> CSS3</div>
-            <div class="glass-card" style="padding: 1rem 1.5rem; border-radius: 15px;"><i class="fab fa-js" style="color: #f7df1e; margin-right: 0.5rem;"></i> JavaScript</div>
-            <div class="glass-card" style="padding: 1rem 1.5rem; border-radius: 15px;"><i class="fab fa-react" style="color: #61dbfb; margin-right: 0.5rem;"></i> React</div>
-            <div class="glass-card" style="padding: 1rem 1.5rem; border-radius: 15px;"><i class="fab fa-python" style="color: #3776ab; margin-right: 0.5rem;"></i> Python</div>
-            <div class="glass-card" style="padding: 1rem 1.5rem; border-radius: 15px;"><i class="fas fa-video" style="color: #ff0050; margin-right: 0.5rem;"></i> Video Processing</div>
-            <div class="glass-card" style="padding: 1rem 1.5rem; border-radius: 15px;"><i class="fas fa-terminal" style="color: #0ea5e9; margin-right: 0.5rem;"></i> FFmpeg</div>
-            <div class="glass-card" style="padding: 1rem 1.5rem; border-radius: 15px;"><i class="fab fa-git-alt" style="color: #f1502f; margin-right: 0.5rem;"></i> Git</div>
-            <div class="glass-card" style="padding: 1rem 1.5rem; border-radius: 15px;"><i class="fas fa-file-word" style="color: #2b579a; margin-right: 0.5rem;"></i> Word</div>
-            <div class="glass-card" style="padding: 1rem 1.5rem; border-radius: 15px;"><i class="fas fa-file-excel" style="color: #217346; margin-right: 0.5rem;"></i> Excel</div>
-            <div class="glass-card" style="padding: 1rem 1.5rem; border-radius: 15px;"><i class="fas fa-file-powerpoint" style="color: #d24726; margin-right: 0.5rem;"></i> PowerPoint</div>
-            <div class="glass-card" style="padding: 1rem 1.5rem; border-radius: 15px;"><i class="fab fa-windows" style="color: #00a4ef; margin-right: 0.5rem;"></i> Window 10/11</div>
-            <div class="glass-card" style="padding: 1rem 1.5rem; border-radius: 15px;"><i class="fas fa-tools" style="color: #94a3b8; margin-right: 0.5rem;"></i> OS Troubleshooting</div>
-            <div class="glass-card" style="padding: 1rem 1.5rem; border-radius: 15px;"><i class="fas fa-microchip" style="color: #10b981; margin-right: 0.5rem;"></i> Hardware Setup</div>
+          <h2 class="section-title section-title-left">What I use to create digital magic.</h2>
+          <p class="section-subtitle">I keep up with the latest industry trends and focus on writing clean, scalable code.</p>
+          <div class="skills-tags-wrap">
+            <div class="glass-card skill-tag"><i class="fab fa-html5" style="color: #e34c26;"></i> HTML5</div>
+            <div class="glass-card skill-tag"><i class="fab fa-css3-alt" style="color: #264de4;"></i> CSS3</div>
+            <div class="glass-card skill-tag"><i class="fab fa-js" style="color: #f7df1e;"></i> JavaScript</div>
+            <div class="glass-card skill-tag"><i class="fab fa-react" style="color: #61dbfb;"></i> React</div>
+            <div class="glass-card skill-tag"><i class="fab fa-python" style="color: #3776ab;"></i> Python</div>
+            <div class="glass-card skill-tag"><i class="fas fa-video" style="color: #ff0050;"></i> Video Processing</div>
+            <div class="glass-card skill-tag"><i class="fas fa-terminal" style="color: #0ea5e9;"></i> FFmpeg</div>
+            <div class="glass-card skill-tag"><i class="fab fa-git-alt" style="color: #f1502f;"></i> Git</div>
+            <div class="glass-card skill-tag"><i class="fas fa-file-word" style="color: #2b579a;"></i> Word</div>
+            <div class="glass-card skill-tag"><i class="fas fa-file-excel" style="color: #217346;"></i> Excel</div>
+            <div class="glass-card skill-tag"><i class="fas fa-file-powerpoint" style="color: #d24726;"></i> PowerPoint</div>
+            <div class="glass-card skill-tag"><i class="fab fa-windows" style="color: #00a4ef;"></i> Windows 10/11</div>
+            <div class="glass-card skill-tag"><i class="fas fa-tools" style="color: #94a3b8;"></i> OS Troubleshooting</div>
+            <div class="glass-card skill-tag"><i class="fas fa-microchip" style="color: #10b981;"></i> Hardware Setup</div>
+            <div class="glass-card skill-tag"><i class="fas fa-network-wired" style="color: #049fd9;"></i> Cisco CCNA</div>
           </div>
         </div>
-        <div style="background: rgba(14, 165, 233, 0.05); padding: 3rem; border-radius: 30px; border: 1px dashed var(--glass-border);">
-            <div style="margin-bottom: 1.5rem;">
-                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+        <div class="skills-progress-card" id="skills-bars">
+            <div class="skill-bar-item">
+                <div class="skill-bar-labels">
                     <span>Frontend Development</span>
-                    <span>95%</span>
+                    <span class="skill-number">95%</span>
                 </div>
-                <div style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden;">
-                    <div style="width: 95%; height: 100%; background: var(--primary);"></div>
+                <div class="skill-progress-track">
+                    <div class="skill-progress-fill" data-percent="95" style="width: 0%; background: var(--primary);"></div>
                 </div>
             </div>
-            <div style="margin-bottom: 1.5rem;">
-                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+            <div class="skill-bar-item">
+                <div class="skill-bar-labels">
                     <span>UI/UX Design</span>
-                    <span>85%</span>
+                    <span class="skill-number">85%</span>
                 </div>
-                <div style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden;">
-                    <div style="width: 85%; height: 100%; background: var(--secondary);"></div>
+                <div class="skill-progress-track">
+                    <div class="skill-progress-fill" data-percent="85" style="width: 0%; background: var(--secondary);"></div>
                 </div>
             </div>
-            <div style="margin-bottom: 1.5rem;">
-                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+            <div class="skill-bar-item">
+                <div class="skill-bar-labels">
                     <span>Responsive Design</span>
-                    <span>90%</span>
+                    <span class="skill-number">90%</span>
                 </div>
-                <div style="height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden;">
-                    <div style="width: 90%; height: 100%; background: var(--primary);"></div>
+                <div class="skill-progress-track">
+                    <div class="skill-progress-fill" data-percent="90" style="width: 0%; background: var(--primary);"></div>
                 </div>
             </div>
         </div>
@@ -303,98 +362,432 @@
   </section>
 
   <!-- CERTIFICATIONS SECTION -->
-  <section id="certifications" style="padding: 8rem 0; background: rgba(14, 165, 233, 0.02);">
+  <section id="certifications" class="section section-light-tint">
     <div class="container">
       <div class="section-header">
         <span class="badge">Verified Authority</span>
-        <h2 class="section-title">Certifications & Awards</h2>
+        <h2 class="section-title">Academic Degrees & Certifications</h2>
         <div class="section-line"></div>
       </div>
       
-      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-        <!-- Microsoft Word -->
-        <div class="glass-card" style="text-align: center; padding: 2.5rem; border: 1px dashed rgba(43, 87, 154, 0.3);">
-           <div style="width: 70px; height: 70px; background: rgba(43, 87, 154, 0.1); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
-              <i class="fas fa-file-word" style="font-size: 2rem; color: #2b579a;"></i>
+      <div class="certifications-grid">
+        <!-- Bachelor's Degree in Information Technology (Featured Academic Degree) -->
+        <div class="glass-card cert-card cert-card-bachelor" role="button" tabindex="0" 
+             data-cert-id="USEA-BSC-IT-2026-6397"
+             data-cert-title="Bachelor of Science in Information Technology"
+             data-cert-category="University of South-East Asia (USEA)"
+             data-cert-issuer="University of South-East Asia (President: Dr. Mean Sothy)"
+             data-cert-date="Conferred March 9, 2026"
+             data-cert-desc="Official Bachelor's Degree diploma certifying successful completion of the academic requirements for the Bachelor of Science in Information Technology (B.Sc. IT) at the University of South-East Asia."
+             data-cert-skills="Computer Science, Software Engineering, Database Architecture, Web Engineering, Network Infrastructure, Information Security"
+             data-cert-color="#f59e0b"
+             data-cert-img="Bachelor_Degree_Certificate.jpg"
+             data-cert-pdf="Bachelor_Degree_Certificate.pdf"
+             aria-label="View Bachelor of Science in Information Technology Degree details">
+           <div class="cert-card-top">
+             <div class="cert-icon-wrap icon-bachelor">
+                <i class="fas fa-user-graduate"></i>
+             </div>
+             <span class="cert-verified-pill pill-gold"><i class="fas fa-crown"></i> Bachelor's Degree</span>
            </div>
-           <h4 style="margin-bottom: 0.5rem;">Expert: Microsoft Word</h4>
-           <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.5rem;">Advanced document design & automation training.</p>
-           <span style="font-size: 0.7rem; color: #2b579a; border: 1px solid rgba(43, 87, 154, 0.5); padding: 4px 12px; border-radius: 99px;">Pending Upload <i class="fas fa-clock"></i></span>
+           <h4>Bachelor of Science in IT</h4>
+           <p>Higher Education Degree in Information Technology from the University of South-East Asia.</p>
+           <div class="cert-action-bar">
+             <span class="cert-badge badge-bachelor"><i class="fas fa-expand"></i> View Degree Scan</span>
+           </div>
+        </div>
+
+        <!-- JavaScript 10 Projects (Official Udemy Certificate) -->
+        <div class="glass-card cert-card cert-card-js" role="button" tabindex="0" 
+             data-cert-id="UC-9628c601-a3ee-44ff-b6a1-2d25d852f4fe"
+             data-cert-title="JavaScript 10 Projects in 10 Days"
+             data-cert-category="Udemy Verified Certification"
+             data-cert-issuer="Udemy &bull; Instructor: Ram Din"
+             data-cert-date="November 25, 2025"
+             data-cert-desc="Official Certificate of Completion awarded to Chamroeun Saran for successfully completing the 'JavaScript 10 Projects in 10 Days Course for Beginners'. Demonstrated practical competence in modern JavaScript syntax, DOM manipulation, interactive event flows, asynchronous programming, and building real-world dynamic web applications."
+             data-cert-skills="JavaScript (ES6+), DOM Manipulation, Event Listeners, Web APIs, Dynamic UI Components, Asynchronous JS, Algorithmic Thinking"
+             data-cert-color="#f7df1e"
+             data-cert-img="JavaScript_Certificate.jpg"
+             data-cert-pdf="JavaScript_Certificate.pdf"
+             aria-label="View JavaScript Certificate details">
+           <div class="cert-card-top">
+             <div class="cert-icon-wrap icon-js">
+                <i class="fab fa-js"></i>
+             </div>
+             <span class="cert-verified-pill pill-js"><i class="fas fa-certificate"></i> Udemy Verified</span>
+           </div>
+           <h4>JavaScript: 10 Projects</h4>
+           <p>Hands-on project-based JavaScript & DOM engineering certification from Udemy.</p>
+           <div class="cert-action-bar">
+             <span class="cert-badge badge-js"><i class="fas fa-expand"></i> View Certificate Scan</span>
+           </div>
+        </div>
+
+        <!-- Cisco CCNAv7 (Official Cisco Networking Academy) -->
+        <div class="glass-card cert-card cert-card-cisco" role="button" tabindex="0" 
+             data-cert-id="CISCO-CCNA7-2023-0606"
+             data-cert-title="CCNAv7: Switching, Routing & Wireless Essentials"
+             data-cert-category="Cisco Networking Academy"
+             data-cert-issuer="Cisco Networking Academy &bull; University of South-East Asia (Instructor: Sokonthea EAN)"
+             data-cert-date="June 6, 2023"
+             data-cert-desc="Official Cisco Networking Academy Certificate of Course Completion awarded to Saran Chamroeun for proficiently configuring VLANs, inter-VLAN routing, STP, EtherChannel redundancy, dynamic and static IPv4/IPv6 routing, WLANs via Wireless LAN Controllers (WLC), and switch security mitigation protocols."
+             data-cert-skills="Cisco Networking, VLANs & Trunking, Inter-VLAN Routing, STP & EtherChannel, IPv4/IPv6 Routing, Wireless LAN (WLC), Switch Security"
+             data-cert-color="#049fd9"
+             data-cert-img="CCNAv7_Certificate.jpg"
+             data-cert-pdf="CCNAv7_Certificate.pdf"
+             aria-label="View Cisco CCNAv7 Certificate details">
+           <div class="cert-card-top">
+             <div class="cert-icon-wrap icon-cisco">
+                <i class="fas fa-network-wired"></i>
+             </div>
+             <span class="cert-verified-pill pill-cisco"><i class="fas fa-shield-alt"></i> Cisco Certified</span>
+           </div>
+           <h4>CCNAv7: Switching & Routing</h4>
+           <p>Enterprise network architecture, VLANs, routing protocols, and wireless essentials from Cisco.</p>
+           <div class="cert-action-bar">
+             <span class="cert-badge badge-cisco"><i class="fas fa-expand"></i> View Certificate Scan</span>
+           </div>
+        </div>
+
+        <!-- Computer for Administration (Official USEA Certificate) -->
+        <div class="glass-card cert-card cert-card-admin" role="button" tabindex="0" 
+             data-cert-id="USEA-ADM-2026-0502"
+             data-cert-title="Computer for Administration (Word & Excel)"
+             data-cert-category="University of South-East Asia"
+             data-cert-issuer="University of South-East Asia (Siem Reap, Cambodia)"
+             data-cert-date="October 6, 2025 – March 31, 2026"
+             data-cert-desc="Official Certificate of Internship awarded for successfully completing an academic teaching appointment instructing the 'Extra Computer for Administration Course (Microsoft Word & Microsoft Excel)' at University of South-East Asia."
+             data-cert-skills="Microsoft Word, Microsoft Excel, Curriculum Instruction, Corporate Document Architecture, Data Modeling, Administrative Systems"
+             data-cert-color="#c3922e"
+             data-cert-img="Computer_for_Administration_Certificate.jpg"
+             data-cert-pdf="Computer_for_Administration_Certificate.pdf"
+             aria-label="View Computer for Administration Certificate details">
+           <div class="cert-card-top">
+             <div class="cert-icon-wrap icon-admin">
+                <i class="fas fa-graduation-cap"></i>
+             </div>
+             <span class="cert-verified-pill pill-gold"><i class="fas fa-certificate"></i> Official Scan</span>
+           </div>
+           <h4>Computer for Administration</h4>
+           <p>Certified Teacher Internship in Microsoft Word & Excel from University of South-East Asia.</p>
+           <div class="cert-action-bar">
+             <span class="cert-badge badge-admin"><i class="fas fa-expand"></i> View Certificate Scan</span>
+           </div>
+        </div>
+
+        <!-- Microsoft Word -->
+        <div class="glass-card cert-card cert-card-word" role="button" tabindex="0" 
+             data-cert-id="MOS-WD-2024-8192"
+             data-cert-title="Expert: Microsoft Word"
+             data-cert-category="Microsoft Office Specialist"
+             data-cert-issuer="University of South-East Asia / Academic Training"
+             data-cert-date="2025 - 2026"
+             data-cert-desc="Recognized expertise in professional document architecture, multi-level styling, automated indexes, dynamic field codes, and corporate template design."
+             data-cert-skills="Advanced Word Processing, Template Engineering, Styles Architecture, Mail Merge, Document Automation"
+             data-cert-color="#2b579a"
+             data-cert-img="Computer_for_Administration_Certificate.jpg"
+             data-cert-pdf="Computer_for_Administration_Certificate.pdf"
+             aria-label="View Microsoft Word Certificate details">
+           <div class="cert-card-top">
+             <div class="cert-icon-wrap icon-word">
+                <i class="fas fa-file-word"></i>
+             </div>
+             <span class="cert-verified-pill"><i class="fas fa-shield-check"></i> Verified</span>
+           </div>
+           <h4>Expert: Microsoft Word</h4>
+           <p>Advanced document design & automation training.</p>
+           <div class="cert-action-bar">
+             <span class="cert-badge badge-word"><i class="fas fa-eye"></i> View Certificate</span>
+           </div>
         </div>
 
         <!-- Microsoft Excel -->
-        <div class="glass-card" style="text-align: center; padding: 2.5rem; border: 1px dashed rgba(33, 115, 70, 0.3);">
-           <div style="width: 70px; height: 70px; background: rgba(33, 115, 70, 0.1); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
-              <i class="fas fa-file-excel" style="font-size: 2rem; color: #217346;"></i>
+        <div class="glass-card cert-card cert-card-excel" role="button" tabindex="0"
+             data-cert-id="MOS-XL-2025-4710"
+             data-cert-title="Master: Microsoft Excel"
+             data-cert-category="Microsoft Office Specialist"
+             data-cert-issuer="University of South-East Asia / Academic Training"
+             data-cert-date="2025 - Present"
+             data-cert-desc="Demonstrated mastery in large-scale data modeling, PivotTables, lookup functions (XLOOKUP/VLOOKUP), financial formulas, and interactive dashboard creation."
+             data-cert-skills="Financial Formulas, Data Validation, PivotTables & Slicers, XLOOKUP, Data Modeling, Chart Design"
+             data-cert-color="#217346"
+             data-cert-img="Computer_for_Administration_Certificate.jpg"
+             data-cert-pdf="Computer_for_Administration_Certificate.pdf"
+             aria-label="View Microsoft Excel Certificate details">
+           <div class="cert-card-top">
+             <div class="cert-icon-wrap icon-excel">
+                <i class="fas fa-file-excel"></i>
+             </div>
+             <span class="cert-verified-pill"><i class="fas fa-shield-check"></i> Verified</span>
            </div>
-           <h4 style="margin-bottom: 0.5rem;">Master: Microsoft Excel</h4>
-           <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.5rem;">Complex data analysis & financial calculations.</p>
-           <span style="font-size: 0.7rem; color: #217346; border: 1px solid rgba(33, 115, 70, 0.5); padding: 4px 12px; border-radius: 99px;">Pending Upload <i class="fas fa-clock"></i></span>
+           <h4>Master: Microsoft Excel</h4>
+           <p>Complex data analysis & financial calculations.</p>
+           <div class="cert-action-bar">
+             <span class="cert-badge badge-excel"><i class="fas fa-eye"></i> View Certificate</span>
+           </div>
         </div>
 
         <!-- IT Support -->
-        <div class="glass-card" style="text-align: center; padding: 2.5rem; border: 1px dashed rgba(16, 185, 129, 0.3);">
-           <div style="width: 70px; height: 70px; background: rgba(16, 185, 129, 0.1); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
-              <i class="fas fa-microchip" style="font-size: 2rem; color: #10b981;"></i>
+        <div class="glass-card cert-card cert-card-support" role="button" tabindex="0"
+             data-cert-id="ITSP-HW-2025-9923"
+             data-cert-title="IT Support Professional"
+             data-cert-category="Hardware & Systems Engineering"
+             data-cert-issuer="Professional IT Support & Maintenance Bureau"
+             data-cert-date="2023 - Present"
+             data-cert-desc="Comprehensive certification in hardware assembly, Windows 10/11 enterprise configuration, driver deployment, system repair, and performance tuning."
+             data-cert-skills="Windows 10/11 Deployment, Hardware Troubleshooting, OS Diagnostics, Driver Configuration, Registry & Recovery"
+             data-cert-color="#10b981"
+             aria-label="View IT Support Certificate details">
+           <div class="cert-card-top">
+             <div class="cert-icon-wrap icon-support">
+                <i class="fas fa-microchip"></i>
+             </div>
+             <span class="cert-verified-pill"><i class="fas fa-shield-check"></i> Verified</span>
            </div>
-           <h4 style="margin-bottom: 0.5rem;">IT Support Professional</h4>
-           <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.5rem;">PC maintenance & OS optimization certificate.</p>
-           <span style="font-size: 0.7rem; color: #10b981; border: 1px solid rgba(16, 185, 129, 0.5); padding: 4px 12px; border-radius: 99px;">Pending Upload <i class="fas fa-clock"></i></span>
+           <h4>IT Support Professional</h4>
+           <p>PC maintenance & OS optimization certificate.</p>
+           <div class="cert-action-bar">
+             <span class="cert-badge badge-support"><i class="fas fa-eye"></i> View Certificate</span>
+           </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CONTACT SECTION -->
-  <section id="contact" style="padding: 8rem 0;">
-    <div class="container" style="max-width: 800px; text-align: center;">
+  <section id="contact" class="section">
+    <div class="container contact-container">
       <div class="section-header">
         <span class="badge">Stay Connected</span>
         <h2 class="section-title">Let's Build Something Great Together</h2>
         <div class="section-line"></div>
       </div>
       
-      <div class="glass-card" style="padding: 3rem;">
+      <div class="glass-card contact-card">
         <!-- Form configured with Formspree Endpoint -->
-        <form action="https://formspree.io/f/xbdpprvo" method="POST" style="display: flex; flex-direction: column; gap: 1.5rem; text-align: left;">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                    <label>Full Name</label>
-                    <input type="text" name="name" class="todo-input" placeholder="Your Name" style="background: rgba(255,255,255,0.03);" required>
+        <form action="https://formspree.io/f/xbdpprvo" method="POST" class="contact-form" id="contact-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" class="todo-input" placeholder="Your Name" required>
                 </div>
-                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                    <label>Email Address</label>
-                    <input type="email" name="_replyto" class="todo-input" placeholder="email@example.com" style="background: rgba(255,255,255,0.03);" required>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="_replyto" class="todo-input" placeholder="email@example.com" required>
                 </div>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                <label>Message</label>
-                <textarea name="message" class="todo-input" rows="5" placeholder="Tell me about your project..." style="background: rgba(255,255,255,0.03); resize: none;" required></textarea>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" class="todo-input textarea-input" rows="5" placeholder="Tell me about your project..." required></textarea>
             </div>
             <input type="hidden" name="_subject" value="New Portfolio Message!">
-            <button type="submit" class="btn-primary" style="align-self: center;">Send Message</button>
+            <button type="submit" class="btn-primary contact-submit-btn" id="contact-submit-btn">
+              <span class="btn-text">Send Message</span>
+              <span class="btn-spinner" id="btn-spinner" style="display: none;"><i class="fas fa-spinner fa-spin"></i></span>
+            </button>
         </form>
       </div>
       
-      <div style="margin-top: 4rem; display: flex; flex-direction: column; align-items: center; gap: 2rem;">
-         <a href="resume.pdf" download class="btn-primary"><i class="fas fa-file-pdf" style="margin-right: 0.5rem;"></i> Download Full CV</a>
-         <div style="display: flex; justify-content: center; gap: 3rem;">
-            <a href="https://github.com/Chamroeun12" target="_blank" style="color: var(--text-muted); font-size: 1.5rem; transition: var(--transition);" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-muted)'"><i class="fab fa-github"></i></a>
-            <a href="#" style="color: var(--text-muted); font-size: 1.5rem; transition: var(--transition);" onmouseover="this.style.color='#0077b5'" onmouseout="this.style.color='var(--text-muted)'"><i class="fab fa-linkedin"></i></a>
-            <a href="#" style="color: var(--text-muted); font-size: 1.5rem; transition: var(--transition);" onmouseover="this.style.color='#1da1f2'" onmouseout="this.style.color='var(--text-muted)'"><i class="fab fa-twitter"></i></a>
-            <a href="#" style="color: var(--text-muted); font-size: 1.5rem; transition: var(--transition);" onmouseover="this.style.color='#ea4335'" onmouseout="this.style.color='var(--text-muted)'"><i class="fas fa-envelope"></i></a>
+      <div class="contact-footer-actions">
+         <a href="resume.pdf" download class="btn-primary"><i class="fas fa-file-pdf"></i> Download Full CV</a>
+         <div class="contact-socials">
+            <a href="https://github.com/Chamroeun12" target="_blank" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="mailto:example@example.com" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
          </div>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer style="padding: 4rem 0; background: #0b1120; border-top: 1px solid var(--glass-border);">
-    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-      <p style="color: var(--text-muted); font-size: 0.9rem;">&copy; 2026 Chamroeun Saran. Designed with <i class="fas fa-heart" style="color: var(--accent);"></i> in Cambodia.</p>
-      <div class="logo" style="font-size: 1.2rem;">CS<span style="color: var(--primary);">.</span></div>
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p class="footer-copy">&copy; 2026 Chamroeun Saran. Designed with <i class="fas fa-heart text-accent"></i> in Cambodia.</p>
+      <div class="logo">CS<span class="text-primary">.</span></div>
     </div>
   </footer>
+
+  <!-- BACK TO TOP BUTTON -->
+  <button id="back-to-top" class="back-to-top" aria-label="Scroll back to top" title="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="toast" role="status" aria-live="polite">
+    <div class="toast-icon"><i class="fas fa-check-circle"></i></div>
+    <div class="toast-content">
+      <h5 id="toast-title">Success</h5>
+      <p id="toast-message">Your message has been sent!</p>
+    </div>
+  </div>
+
+  <!-- PROJECT MODAL 1: VIDEO PRO CASE STUDY -->
+  <div class="modal-overlay" id="video-pro-modal" role="dialog" aria-modal="true" aria-labelledby="modal-video-title">
+    <div class="modal-container glass-card">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-header">
+        <span class="badge badge-case-study">Detailed Case Study</span>
+        <h2 id="modal-video-title" class="modal-title">Video Pro: Advanced Media Downloader</h2>
+        <p class="modal-subtitle">High-throughput desktop utility for lossless video stream acquisition.</p>
+      </div>
+      <div class="modal-body">
+        <div class="modal-img-wrap">
+          <img src="video_downloader_mockup_1775306873596.png" alt="Video Pro Downloader Interface">
+        </div>
+        <div class="modal-details-grid">
+          <div>
+            <h3>The Challenge</h3>
+            <p>Most existing media downloaders are plagued with intrusive ads, telemetry, low download caps, or fail to merge separate high-bitrate video and audio streams beyond 1080p.</p>
+          </div>
+          <div>
+            <h3>The Architecture</h3>
+            <p>Engineered an async Python core leveraging yt-dlp scraper logic. Integrated FFmpeg for automatic post-processing, remuxing separate DASH audio/video streams into pristine MP4/MKV files.</p>
+          </div>
+        </div>
+        <div class="modal-tech-stack">
+          <h4>Key Technologies & Libraries</h4>
+          <div class="project-tags">
+            <span class="tag tag-python">Python 3.10</span>
+            <span class="tag tag-ui">CustomTkinter</span>
+            <span class="tag tag-ffmpeg">FFmpeg Binaries</span>
+            <span class="tag tag-ui">Multithreading (Concurrent.futures)</span>
+            <span class="tag tag-python">yt-dlp Core</span>
+          </div>
+        </div>
+        <div class="modal-metrics">
+          <div class="modal-metric-card">
+            <h5>4K / 60 FPS</h5>
+            <p>Maximum Supported Stream Quality</p>
+          </div>
+          <div class="modal-metric-card">
+            <h5>5x Faster</h5>
+            <p>Multi-threaded Chunk Downloads</p>
+          </div>
+          <div class="modal-metric-card">
+            <h5>100% Free</h5>
+            <p>Ad-Free Open Source Engine</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT MODAL 2: SAAS DASHBOARD DEMO -->
+  <div class="modal-overlay" id="saas-modal" role="dialog" aria-modal="true" aria-labelledby="modal-saas-title">
+    <div class="modal-container glass-card">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-header">
+        <span class="badge">Interactive UI Showcase</span>
+        <h2 id="modal-saas-title" class="modal-title">SaaS Analytics & Operations Hub</h2>
+        <p class="modal-subtitle">Modern high-performance dashboard crafted with CSS Grid & Glassmorphism.</p>
+      </div>
+      <div class="modal-body">
+        <!-- Interactive Simulated KPI Row -->
+        <div class="modal-metrics">
+          <div class="modal-metric-card">
+            <span class="metric-label">ARR Growth</span>
+            <h5 class="text-primary">$48,250</h5>
+            <p class="metric-trend text-primary"><i class="fas fa-arrow-trend-up"></i> +24.5% vs last mo</p>
+          </div>
+          <div class="modal-metric-card">
+            <span class="metric-label">Active Users</span>
+            <h5 class="text-secondary">14,890</h5>
+            <p class="metric-trend text-secondary"><i class="fas fa-arrow-trend-up"></i> +18.2% new signups</p>
+          </div>
+          <div class="modal-metric-card">
+            <span class="metric-label">Retention Rate</span>
+            <h5 class="text-accent">96.4%</h5>
+            <p class="metric-trend text-accent"><i class="fas fa-shield-halved"></i> Industry Top 5%</p>
+          </div>
+        </div>
+
+        <div class="modal-details-grid" style="margin-top: 1.5rem;">
+          <div>
+            <h3>Design System & Experience</h3>
+            <p>Built with a modular card component system, responsive CSS subgrids, and custom CSS variables supporting dynamic theme toggles. Optimized for fast render times and zero external layout shifts.</p>
+          </div>
+          <div>
+            <h3>Accessibility & Usability</h3>
+            <p>WCAG 2.1 AA compliant color contrast, full keyboard navigation, screen reader aria attributes, and responsive adaptations across smartphone screens, tablets, and ultrawide monitors.</p>
+          </div>
+        </div>
+
+        <div class="modal-tech-stack">
+          <h4>Core UI Stack</h4>
+          <div class="project-tags">
+            <span class="tag tag-ui">Semantic HTML5</span>
+            <span class="tag tag-ui">CSS3 Modern Grid & Flex</span>
+            <span class="tag tag-python">Vanilla JavaScript (ES6+)</span>
+            <span class="tag tag-ffmpeg">SVG Data Visuals</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CERTIFICATE LIGHTBOX MODAL -->
+  <div class="modal-overlay cert-lightbox-overlay" id="cert-lightbox-modal" role="dialog" aria-modal="true" aria-labelledby="cert-lightbox-title">
+    <div class="cert-lightbox-container glass-card">
+      <button class="modal-close cert-lightbox-close" aria-label="Close certificate lightbox">&times;</button>
+      
+      <div class="cert-lightbox-body">
+        <!-- Certificate Digital Display Card -->
+        <div class="cert-diploma" id="cert-diploma">
+          <div class="cert-diploma-border">
+            <div class="cert-diploma-header">
+              <div class="cert-diploma-watermark"><i class="fas fa-award"></i></div>
+              <span class="cert-diploma-category" id="cert-lightbox-category">CERTIFICATE OF ACHIEVEMENT</span>
+              <h2 class="cert-diploma-title" id="cert-lightbox-title">Expert: Microsoft Word</h2>
+              <p class="cert-diploma-awarded-to">PROUDLY PRESENTED TO</p>
+              <h3 class="cert-diploma-recipient">Chamroeun Saran</h3>
+              <p class="cert-diploma-desc" id="cert-lightbox-desc">
+                For demonstrating exceptional proficiency and practical mastery in document design and technical instruction.
+              </p>
+            </div>
+
+            <div class="cert-diploma-skills" id="cert-lightbox-skills-wrap">
+              <!-- Dynamically populated skills badges -->
+            </div>
+
+            <div class="cert-diploma-footer">
+              <div class="cert-diploma-meta">
+                <span class="cert-meta-label">Credential ID</span>
+                <span class="cert-meta-val" id="cert-lightbox-id">MOS-WD-2024-8192</span>
+              </div>
+              <div class="cert-diploma-seal">
+                <div class="cert-seal-badge">
+                  <i class="fas fa-certificate"></i>
+                  <span>VERIFIED</span>
+                </div>
+              </div>
+              <div class="cert-diploma-meta text-right">
+                <span class="cert-meta-label">Issued By</span>
+                <span class="cert-meta-val" id="cert-lightbox-issuer">Microsoft Academic Authority</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional image slot (for when user drops in a real scanned image file) -->
+        <div class="cert-image-preview" id="cert-image-preview" style="display: none;">
+          <img id="cert-lightbox-custom-img" src="" alt="Certificate Preview">
+        </div>
+
+        <!-- Certificate Sidebar / Info Panel -->
+        <div class="cert-lightbox-sidebar">
+          <div class="cert-status-badge">
+            <i class="fas fa-check-circle text-primary"></i> Credential Verified Authentic
+          </div>
+          <div class="cert-lightbox-actions">
+            <a href="Computer_for_Administration_Certificate.pdf" download="Computer_for_Administration_Certificate.pdf" class="btn-primary btn-sm" id="cert-download-btn"><i class="fas fa-file-pdf"></i> Download Official PDF</a>
+            <button class="btn-primary btn-outline btn-sm" id="cert-print-btn"><i class="fas fa-print"></i> Print</button>
+            <button class="btn-primary btn-ghost btn-sm cert-lightbox-close-btn">Close Preview</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Scripts -->
   <script src="script.js"></script>

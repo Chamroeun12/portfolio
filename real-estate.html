@@ -225,9 +225,140 @@
       transform: scale(1.1);
     }
 
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(195, 146, 46, 0.4);
+      cursor: pointer;
+      border-radius: 8px;
+      padding: 0;
+      transition: var(--transition);
+      z-index: 1100;
+    }
+
+    .menu-toggle span {
+      width: 20px;
+      height: 2px;
+      background-color: var(--white);
+      transition: all 0.3s ease;
+    }
+
+    .menu-toggle.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .menu-toggle.open span:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-toggle.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .nav-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      z-index: 1040;
+    }
+
+    .nav-backdrop.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
     @media (max-width: 1024px) {
       .details { grid-template-columns: repeat(2, 1fr); }
       .description { flex-direction: column; padding: 5rem 5%; text-align: center; }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem 1.25rem;
+      }
+      nav.scrolled {
+        padding: 0.75rem 1.25rem;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: min(85vw, 300px);
+        height: 100vh;
+        height: 100dvh;
+        background: rgba(20, 20, 20, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-left: 1px solid rgba(195, 146, 46, 0.3);
+        flex-direction: column;
+        padding: 5rem 1.75rem 2rem;
+        gap: 1.5rem;
+        transition: right 0.35s ease;
+        z-index: 1050;
+      }
+      .nav-links.open {
+        right: 0;
+        display: flex;
+      }
+      .nav-links a {
+        font-size: 0.95rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .nav-inquire-btn {
+        display: none;
+      }
+      .details {
+        grid-template-columns: 1fr;
+        padding: 4rem 1.5rem;
+        gap: 2rem;
+      }
+      .description {
+        padding: 3.5rem 1.25rem;
+        gap: 2.5rem;
+      }
+      .desc-text h2 {
+        font-size: 2rem;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .hero p {
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+        margin-bottom: 2rem;
+      }
+      .btn-gold {
+        padding: 1rem 2rem;
+        font-size: 0.8rem;
+      }
+      .back-to-portfolio {
+        bottom: 1.25rem;
+        right: 1.25rem;
+        padding: 0.75rem 1.15rem;
+        font-size: 0.85rem;
+      }
+      footer {
+        padding: 2.5rem 1.25rem !important;
+      }
     }
   </style>
 </head>
@@ -243,8 +374,16 @@
       <a href="#">Amentities</a>
       <a href="#">Gallery</a>
     </div>
-    <a href="#" class="btn-gold" style="padding: 0.6rem 1.5rem; font-size: 0.7rem;">Inquire</a>
+    <div class="nav-actions">
+      <a href="#" class="btn-gold nav-inquire-btn" style="padding: 0.6rem 1.5rem; font-size: 0.7rem;">Inquire</a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </nav>
+  <div class="nav-backdrop" id="nav-backdrop"></div>
 
   <section class="hero">
     <div class="hero-bg" id="hero-parallax"></div>
@@ -299,19 +438,49 @@
   <script>
     const navbar = document.getElementById('navbar');
     const heroBg = document.getElementById('hero-parallax');
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const navBackdrop = document.getElementById('nav-backdrop');
 
+    // Mobile menu toggle
+    function toggleMenu() {
+      if (!menuToggle || !navLinks) return;
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.classList.toggle('open', isOpen);
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      if (navBackdrop) navBackdrop.classList.toggle('open', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
+
+    if (menuToggle) menuToggle.addEventListener('click', toggleMenu);
+    if (navBackdrop) navBackdrop.addEventListener('click', toggleMenu);
+
+    if (navLinks) {
+      navLinks.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          if (navLinks.classList.contains('open')) toggleMenu();
+        });
+      });
+    }
+
+    // Optimized scroll & parallax with requestAnimationFrame
+    let ticking = false;
     window.addEventListener('scroll', () => {
-      // Navbar Scroll
-      if (window.scrollY > 100) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (window.scrollY > 80) {
+            navbar.classList.add('scrolled');
+          } else {
+            navbar.classList.remove('scrolled');
+          }
+          if (heroBg) {
+            heroBg.style.transform = `translateY(${window.scrollY * 0.35}px)`;
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
-
-      // Parallax Effect
-      let scrollPos = window.scrollY;
-      heroBg.style.transform = `translateY(${scrollPos * 0.4}px)`;
-    });
+    }, { passive: true });
   </script>
 </body>
 </html>
