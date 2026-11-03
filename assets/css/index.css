@@ -1771,6 +1771,13 @@ h1 {
   box-shadow: 0 8px 20px rgba(255, 0, 80, 0.25);
 }
 
+.social-link[aria-label*="X"]:hover {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
+}
+
 /* Footer */
 .site-footer {
   padding: 3rem 0;
@@ -2517,6 +2524,13 @@ h1 {
   border-color: #ff0050;
   background: rgba(255, 0, 80, 0.08);
   box-shadow: 0 8px 20px rgba(255, 0, 80, 0.2);
+}
+
+[data-theme="light"] .social-link[aria-label*="X"]:hover {
+  color: #0f172a;
+  border-color: #0f172a;
+  background: rgba(15, 23, 42, 0.08);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.15);
 }
 
 [data-theme="light"] .todo-input {

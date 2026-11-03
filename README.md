@@ -61,6 +61,7 @@ portfolio/
 - **GitHub**: [github.com/Chamroeun12](https://github.com/Chamroeun12)
 - **Facebook**: [facebook.com/KroeunZ](https://www.facebook.com/KroeunZ/)
 - **TikTok**: [@chamroeun_12](https://www.tiktok.com/@chamroeun_12)
+- **X (Twitter)**: [@saranchamroeun](https://x.com/saranchamroeun)
 - **Location**: Siem Reap, Cambodia
 
 ---
