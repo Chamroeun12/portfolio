@@ -1716,6 +1716,11 @@ h1 {
   color: #10b981;
 }
 
+.contact-quick-icon.icon-telegram {
+  background: rgba(34, 158, 217, 0.15);
+  color: #229ED9;
+}
+
 .contact-quick-text {
   display: flex;
   flex-direction: column;
@@ -1859,6 +1864,13 @@ h1 {
   border-color: #ff0000;
   background: rgba(255, 0, 0, 0.12);
   box-shadow: 0 8px 20px rgba(255, 0, 0, 0.25);
+}
+
+.social-link[aria-label="Telegram"]:hover {
+  color: #229ED9;
+  border-color: #229ED9;
+  background: rgba(34, 158, 217, 0.12);
+  box-shadow: 0 8px 20px rgba(34, 158, 217, 0.25);
 }
 
 .social-link[aria-label*="Phone"]:hover {
@@ -2642,6 +2654,13 @@ h1 {
   border-color: #ff0000;
   background: rgba(255, 0, 0, 0.08);
   box-shadow: 0 8px 20px rgba(255, 0, 0, 0.2);
+}
+
+[data-theme="light"] .social-link[aria-label="Telegram"]:hover {
+  color: #229ED9;
+  border-color: #229ED9;
+  background: rgba(34, 158, 217, 0.08);
+  box-shadow: 0 8px 20px rgba(34, 158, 217, 0.2);
 }
 
 [data-theme="light"] .social-link[aria-label*="Phone"]:hover {
