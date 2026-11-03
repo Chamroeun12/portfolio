@@ -58,6 +58,9 @@ portfolio/
 ---
 
 ## 📬 Contact & Connect
+- **Email**: [saranchamroeun@gmail.com](mailto:saranchamroeun@gmail.com)
+- **Phone / Telegram**: [+855 96 787 6525](tel:+855967876525)
+- **YouTube**: [@chamroeunsaran](https://youtube.com/@chamroeunsaran)
 - **GitHub**: [github.com/Chamroeun12](https://github.com/Chamroeun12)
 - **Facebook**: [facebook.com/KroeunZ](https://www.facebook.com/KroeunZ/)
 - **TikTok**: [@chamroeun_12](https://www.tiktok.com/@chamroeun_12)

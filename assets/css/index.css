@@ -1672,6 +1672,75 @@ h1 {
   flex-wrap: wrap;
 }
 
+
+/* Contact Quick Grid */
+.contact-quick-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.contact-quick-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  text-decoration: none;
+  border-radius: 18px;
+  transition: var(--transition);
+}
+
+.contact-quick-card:hover {
+  transform: translateY(-4px);
+}
+
+.contact-quick-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.contact-quick-icon.icon-email {
+  background: rgba(234, 67, 53, 0.15);
+  color: #ea4335;
+}
+
+.contact-quick-icon.icon-phone {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+}
+
+.contact-quick-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  min-width: 0;
+}
+
+.contact-quick-label {
+  font-size: 0.775rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.contact-quick-val {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /* Contact Section */
 .contact-container {
   max-width: 800px;
@@ -1783,6 +1852,27 @@ h1 {
   border-color: #e1306c;
   background: rgba(225, 48, 108, 0.12);
   box-shadow: 0 8px 20px rgba(225, 48, 108, 0.25);
+}
+
+.social-link[aria-label="YouTube"]:hover {
+  color: #ff0000;
+  border-color: #ff0000;
+  background: rgba(255, 0, 0, 0.12);
+  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.25);
+}
+
+.social-link[aria-label*="Phone"]:hover {
+  color: #10b981;
+  border-color: #10b981;
+  background: rgba(16, 185, 129, 0.12);
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.25);
+}
+
+.social-link[aria-label*="Email"]:hover {
+  color: #ea4335;
+  border-color: #ea4335;
+  background: rgba(234, 67, 53, 0.12);
+  box-shadow: 0 8px 20px rgba(234, 67, 53, 0.25);
 }
 
 /* Footer */
@@ -2545,6 +2635,27 @@ h1 {
   border-color: #e1306c;
   background: rgba(225, 48, 108, 0.08);
   box-shadow: 0 8px 20px rgba(225, 48, 108, 0.2);
+}
+
+[data-theme="light"] .social-link[aria-label="YouTube"]:hover {
+  color: #ff0000;
+  border-color: #ff0000;
+  background: rgba(255, 0, 0, 0.08);
+  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.2);
+}
+
+[data-theme="light"] .social-link[aria-label*="Phone"]:hover {
+  color: #10b981;
+  border-color: #10b981;
+  background: rgba(16, 185, 129, 0.08);
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.2);
+}
+
+[data-theme="light"] .social-link[aria-label*="Email"]:hover {
+  color: #ea4335;
+  border-color: #ea4335;
+  background: rgba(234, 67, 53, 0.08);
+  box-shadow: 0 8px 20px rgba(234, 67, 53, 0.2);
 }
 
 [data-theme="light"] .todo-input {
