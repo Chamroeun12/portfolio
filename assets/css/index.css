@@ -285,10 +285,52 @@ nav.scrolled {
 
 .logo {
   font-weight: 800;
-  font-size: 1.5rem;
+  font-size: 1.45rem;
   color: var(--text-main);
   text-decoration: none;
   letter-spacing: -0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.1rem;
+  transition: var(--transition);
+}
+
+.logo:hover {
+  transform: translateY(-1px);
+}
+
+.logo-highlight {
+  background: linear-gradient(135deg, var(--primary) 0%, #818cf8 50%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 16px rgba(14, 165, 233, 0.45));
+  font-weight: 800;
+  display: inline-block;
+  padding: 0 1px;
+}
+
+.logo-dot {
+  color: var(--primary);
+  font-size: 1.6rem;
+  line-height: 0.8;
+  display: inline-block;
+  transition: var(--transition);
+}
+
+.logo:hover .logo-dot {
+  color: var(--accent);
+  transform: scale(1.2);
+}
+
+[data-theme="light"] .logo {
+  color: #0f172a;
+}
+
+[data-theme="light"] .logo-highlight {
+  background: linear-gradient(135deg, #0284c7 0%, #4f46e5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 12px rgba(2, 132, 199, 0.25));
 }
 
 .nav-links {
