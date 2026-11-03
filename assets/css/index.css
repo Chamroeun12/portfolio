@@ -1764,6 +1764,13 @@ h1 {
   box-shadow: 0 8px 20px rgba(24, 119, 242, 0.25);
 }
 
+.social-link[aria-label="TikTok"]:hover {
+  color: #ff0050;
+  border-color: #ff0050;
+  background: rgba(255, 0, 80, 0.12);
+  box-shadow: 0 8px 20px rgba(255, 0, 80, 0.25);
+}
+
 /* Footer */
 .site-footer {
   padding: 3rem 0;
@@ -2503,6 +2510,13 @@ h1 {
   border-color: #1877f2;
   background: rgba(24, 119, 242, 0.1);
   box-shadow: 0 8px 20px rgba(24, 119, 242, 0.2);
+}
+
+[data-theme="light"] .social-link[aria-label="TikTok"]:hover {
+  color: #ff0050;
+  border-color: #ff0050;
+  background: rgba(255, 0, 80, 0.08);
+  box-shadow: 0 8px 20px rgba(255, 0, 80, 0.2);
 }
 
 [data-theme="light"] .todo-input {
