@@ -1873,6 +1873,13 @@ h1 {
   box-shadow: 0 8px 20px rgba(34, 158, 217, 0.25);
 }
 
+.social-link[aria-label="LinkedIn"]:hover {
+  color: #0a66c2;
+  border-color: #0a66c2;
+  background: rgba(10, 102, 194, 0.12);
+  box-shadow: 0 8px 20px rgba(10, 102, 194, 0.25);
+}
+
 .social-link[aria-label*="Phone"]:hover {
   color: #10b981;
   border-color: #10b981;
@@ -2661,6 +2668,13 @@ h1 {
   border-color: #229ED9;
   background: rgba(34, 158, 217, 0.08);
   box-shadow: 0 8px 20px rgba(34, 158, 217, 0.2);
+}
+
+[data-theme="light"] .social-link[aria-label="LinkedIn"]:hover {
+  color: #0a66c2;
+  border-color: #0a66c2;
+  background: rgba(10, 102, 194, 0.08);
+  box-shadow: 0 8px 20px rgba(10, 102, 194, 0.2);
 }
 
 [data-theme="light"] .social-link[aria-label*="Phone"]:hover {

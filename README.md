@@ -63,6 +63,7 @@ portfolio/
 - **Phone / WhatsApp**: [+855 96 787 6525](tel:+855967876525)
 - **YouTube**: [@chamroeunsaran](https://youtube.com/@chamroeunsaran)
 - **GitHub**: [github.com/Chamroeun12](https://github.com/Chamroeun12)
+- **LinkedIn**: [linkedin.com/in/chamroeun-saran](https://www.linkedin.com/in/chamroeun-saran-548a34302/)
 - **Facebook**: [facebook.com/KroeunZ](https://www.facebook.com/KroeunZ/)
 - **TikTok**: [@chamroeun_12](https://www.tiktok.com/@chamroeun_12)
 - **X (Twitter)**: [@saranchamroeun](https://x.com/saranchamroeun)
