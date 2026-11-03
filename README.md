@@ -59,6 +59,7 @@ portfolio/
 
 ## 📬 Contact & Connect
 - **GitHub**: [github.com/Chamroeun12](https://github.com/Chamroeun12)
+- **Facebook**: [facebook.com/KroeunZ](https://www.facebook.com/KroeunZ/)
 - **Location**: Siem Reap, Cambodia
 
 ---
