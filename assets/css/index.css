@@ -1778,6 +1778,13 @@ h1 {
   box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
 }
 
+.social-link[aria-label="Instagram"]:hover {
+  color: #e1306c;
+  border-color: #e1306c;
+  background: rgba(225, 48, 108, 0.12);
+  box-shadow: 0 8px 20px rgba(225, 48, 108, 0.25);
+}
+
 /* Footer */
 .site-footer {
   padding: 3rem 0;
@@ -2531,6 +2538,13 @@ h1 {
   border-color: #0f172a;
   background: rgba(15, 23, 42, 0.08);
   box-shadow: 0 8px 20px rgba(15, 23, 42, 0.15);
+}
+
+[data-theme="light"] .social-link[aria-label="Instagram"]:hover {
+  color: #e1306c;
+  border-color: #e1306c;
+  background: rgba(225, 48, 108, 0.08);
+  box-shadow: 0 8px 20px rgba(225, 48, 108, 0.2);
 }
 
 [data-theme="light"] .todo-input {
