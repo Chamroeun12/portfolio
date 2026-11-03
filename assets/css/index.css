@@ -5,6 +5,7 @@
   --accent: #f43f5e;
   --dark-bg: #0f172a;
   --card-bg: rgba(30, 41, 59, 0.7);
+  --card-hover-bg: rgba(30, 41, 59, 0.85);
   --glass-border: rgba(255, 255, 255, 0.1);
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
@@ -18,6 +19,7 @@
 [data-theme="light"] {
   --dark-bg: #f8fafc;
   --card-bg: rgba(255, 255, 255, 0.9);
+  --card-hover-bg: #ffffff;
   --glass-border: rgba(0, 0, 0, 0.08);
   --text-main: #0f172a;
   --text-muted: #64748b;
@@ -250,7 +252,7 @@ img {
 
 .glass-card:hover {
   transform: translateY(-6px);
-  background: rgba(30, 41, 59, 0.85);
+  background: var(--card-hover-bg);
   border-color: var(--primary);
   box-shadow: 0 20px 40px rgba(14, 165, 233, 0.15);
 }
@@ -2403,4 +2405,183 @@ h1 {
   .cert-lightbox-sidebar {
     display: none !important;
   }
+}
+
+
+/* ==========================================================================
+   Light Mode Interactive Hover States & Color Tuning
+   ========================================================================== */
+[data-theme="light"] .btn-outline {
+  color: var(--text-main);
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="light"] .btn-outline:hover {
+  color: var(--primary);
+  background: rgba(14, 165, 233, 0.08);
+  border-color: var(--primary);
+  box-shadow: 0 10px 20px rgba(14, 165, 233, 0.15);
+}
+
+[data-theme="light"] .btn-ghost:hover {
+  background: rgba(14, 165, 233, 0.14);
+  border-color: var(--primary);
+}
+
+[data-theme="light"] .glass-card:hover {
+  background: #ffffff;
+  border-color: var(--primary);
+  box-shadow: 0 20px 40px rgba(14, 165, 233, 0.2);
+}
+
+[data-theme="light"] .filter-btn {
+  background: rgba(0, 0, 0, 0.03);
+  color: var(--text-muted);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .filter-btn:hover {
+  background: rgba(14, 165, 233, 0.08);
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+[data-theme="light"] .filter-btn.active {
+  background: rgba(14, 165, 233, 0.12);
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+[data-theme="light"] .filter-count {
+  background: rgba(0, 0, 0, 0.06);
+  color: var(--text-main);
+}
+
+[data-theme="light"] .theme-toggle:hover {
+  background: rgba(245, 158, 11, 0.12);
+  border-color: #f59e0b;
+  color: #f59e0b;
+}
+
+[data-theme="light"] .menu-toggle {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .menu-toggle .hamburger-line {
+  background-color: var(--text-main);
+}
+
+[data-theme="light"] .menu-toggle:hover {
+  background: rgba(14, 165, 233, 0.08);
+  border-color: var(--primary);
+}
+
+[data-theme="light"] .social-link {
+  background: rgba(0, 0, 0, 0.04);
+  color: var(--text-muted);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .social-link:hover {
+  color: var(--primary);
+  background: rgba(14, 165, 233, 0.1);
+  border-color: var(--primary);
+  box-shadow: 0 8px 20px rgba(14, 165, 233, 0.2);
+}
+
+[data-theme="light"] .todo-input {
+  background: #ffffff;
+  color: var(--text-main);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light"] .todo-input:focus {
+  background: #ffffff;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
+}
+
+[data-theme="light"] .todo-btn:hover {
+  color: var(--primary);
+  background: rgba(14, 165, 233, 0.1);
+}
+
+[data-theme="light"] .todo-filter-btn:hover {
+  color: var(--primary);
+  background: rgba(14, 165, 233, 0.08);
+}
+
+[data-theme="light"] .cert-card {
+  background: rgba(255, 255, 255, 0.92);
+}
+
+[data-theme="light"] .cert-card:hover {
+  background: #ffffff;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+[data-theme="light"] .cert-card-bachelor {
+  background: linear-gradient(135deg, #ffffff 60%, rgba(245, 158, 11, 0.08));
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+[data-theme="light"] .cert-card-bachelor:hover {
+  background: linear-gradient(135deg, #ffffff 40%, rgba(245, 158, 11, 0.15));
+  border-color: #f59e0b;
+  box-shadow: 0 20px 40px rgba(245, 158, 11, 0.25);
+}
+
+[data-theme="light"] .cert-card-js {
+  background: linear-gradient(135deg, #ffffff 60%, rgba(247, 223, 30, 0.08));
+  border-color: rgba(234, 179, 8, 0.35);
+}
+
+[data-theme="light"] .cert-card-js:hover {
+  background: linear-gradient(135deg, #ffffff 40%, rgba(247, 223, 30, 0.15));
+  border-color: #eab308;
+  box-shadow: 0 20px 40px rgba(234, 179, 8, 0.25);
+}
+
+[data-theme="light"] .cert-card-cisco {
+  background: linear-gradient(135deg, #ffffff 60%, rgba(4, 159, 217, 0.08));
+  border-color: rgba(4, 159, 217, 0.35);
+}
+
+[data-theme="light"] .cert-card-cisco:hover {
+  background: linear-gradient(135deg, #ffffff 40%, rgba(4, 159, 217, 0.15));
+  border-color: #049fd9;
+  box-shadow: 0 20px 40px rgba(4, 159, 217, 0.25);
+}
+
+[data-theme="light"] .cert-card-admin {
+  background: linear-gradient(135deg, #ffffff 60%, rgba(195, 146, 46, 0.08));
+  border-color: rgba(195, 146, 46, 0.35);
+}
+
+[data-theme="light"] .cert-card-admin:hover {
+  background: linear-gradient(135deg, #ffffff 40%, rgba(195, 146, 46, 0.15));
+  border-color: #c3922e;
+  box-shadow: 0 20px 40px rgba(195, 146, 46, 0.25);
+}
+
+[data-theme="light"] .cert-card-word:hover {
+  border-color: #2b579a;
+  box-shadow: 0 15px 35px rgba(43, 87, 154, 0.2);
+}
+
+[data-theme="light"] .cert-card-excel:hover {
+  border-color: #217346;
+  box-shadow: 0 15px 35px rgba(33, 115, 70, 0.2);
+}
+
+[data-theme="light"] .cert-card-support:hover {
+  border-color: #10b981;
+  box-shadow: 0 15px 35px rgba(16, 185, 129, 0.2);
+}
+
+[data-theme="light"] .site-footer {
+  background: #f1f5f9;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
